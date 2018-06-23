@@ -12,7 +12,7 @@
 #    `--'   `----''--'   '--' `--'
 
 
-theme: jekyll-theme-minimal
+theme: jekyll-text-theme
 
 ## => Configs
 future: true
