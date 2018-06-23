@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="en">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>404 - ChuongTran</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Quick Start - ChuongTran</title>
 <meta name="description" content="A customizable Jekyll theme for your blog or site
 ">
-<link rel="canonical" href="https://tranchuong.github.io//404.html"><link rel="alternate" type="application/rss+xml" title="ChuongTran" href="https://tranchuong.github.io//feed.xml">
+<link rel="canonical" href="https://tranchuong.github.io//docs/en/quick-start"><link rel="alternate" type="application/rss+xml" title="ChuongTran" href="https://tranchuong.github.io//feed.xml">
 
 <!-- begin favicon --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 <meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
@@ -242,7 +242,14 @@
     window.TEXT_VARIABLES = TEXT_VARIABLES;
   })();
 </script></head>
-  <body><div class="layout--page clearfix"><div class="page__main js-page-main"><div class="page__main-inner">
+  <body><div class="layout--page layout--page--sidebar clearfix js-page-root">
+  <div class="page__actions">
+    <div class="button button--circle  button--lg box-shadow-2 sidebar-button js-sidebar-show">
+      <i class="fas fa-bars icon--show"></i>
+    </div>
+  </div>
+  <div class="page__sidebar"><div class="sidebar-toc"><ul class="toc toc--navigator"><li class="toc-h1">Start</li><li class="toc-h2 active"><a href="/docs/en/quick-start">Quick Start</a></li><li class="toc-h2"><a href="/docs/en/structure">Structure</a></li><li class="toc-h1">Customization</li><li class="toc-h2"><a href="/docs/en/configuration">Configuration</a></li><li class="toc-h2"><a href="/docs/en/navigation">Navigation</a></li><li class="toc-h2"><a href="/docs/en/layouts">Layouts</a></li><li class="toc-h2"><a href="/docs/en/logo-and-favicon">Logo and Favicon</a></li><li class="toc-h1">Content</li><li class="toc-h2"><a href="/docs/en/writing-posts">Writing Posts</a></li><li class="toc-h2"><a href="/docs/en/markdown-enhancements">Markdown Enhancements</a></li><li class="toc-h2"><a href="/docs/en/additional-styles">Additional styles</a></li><li class="toc-h1">Dev</li></ul></div></div>
+  <div class="page__mask js-sidebar-hide"></div><div class="page__main js-page-main has-aside"><div class="page__main-inner">
     <div></div><div class="page__header"><header class="header">
   <div class="main clearfix">
     <div class="logo"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -254,18 +261,131 @@
 	c3-3,2.3-5.2-2.1-6.3S7,1.8,7.7,4.6C7,1.8,5,2.1,1.7,5.3C7.3,11,7.3,16.7,1.7,22.3"/>
 </svg><a title="A customizable Jekyll theme for your blog or site
 " href="/">ChuongTran</a></div><nav>
-      <ul><li><a href="/docs/en/quick-start">Docs</a></li><li><a href="/docs/zh/quick-start">文档</a></li><li><a href="/archive.html">Archive</a></li><li><a href="/about/">About</a></li><li><a href="https://github.com/kitian616/jekyll-TeXt-theme">GitHub</a></li></ul>
+      <ul><li class="active"><a href="/docs/en/quick-start">Docs</a></li><li><a href="/docs/zh/quick-start">文档</a></li><li><a href="/archive.html">Archive</a></li><li><a href="/about/">About</a></li><li><a href="https://github.com/kitian616/jekyll-TeXt-theme">GitHub</a></li></ul>
     </nav></div>
 </header>
-</div><div class="page__content"><div class ="main"><div class="col-2 js-col-2"></div>
+</div><div class="page__content"><div class ="main"><div class="col-2 js-col-2"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div></aside></div>
 
           <div class="col-1">
-            <article><div class="article-info clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Tian Qi"/></meta></div>
-<div class="js-article-content"><div class="layout--404">
-  <div class="main">
-    <h1>404</h1>
-  </div>
-</div></div><section class="page__comment"></section></article>
+            <article><div class="main__title"><h1>Quick Start</h1></div><div class="article-info clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Tian Qi"/></meta></div>
+<div class="js-article-content"><div class="layout--article">
+
+  <div class="article-content" itemprop="articleBody"><p>TeXt Theme is 100% compatible with GitHub Pages and it has been developed as a <a href="https://jekyllrb.com/docs/themes/">gem-based themes</a> for easier use.</p>
+
+<p>In this document, you will learn how to <strong>install the theme</strong>, <strong>setup your site</strong>, <strong>local preview</strong> for development, <strong>build</strong> and <strong>publish</strong>.</p>
+
+<!--more-->
+
+<h2 id="installing-the-theme">Installing the Theme</h2>
+
+<h3 id="common-method">Common Method</h3>
+
+<p>To install it with common method, all you need to do is copying all the theme files to your project. There are several ways to do so:</p>
+
+<p>Clone <a href="https://github.com/kitian616/jekyll-TeXt-theme">jekyll-TeXt-theme</a> from github:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```bash
+git clone git@github.com:kitian616/jekyll-TeXt-theme.git
+```
+</code></pre></div></div>
+
+<p>Download and unzip the file to your Jekyll site directory.</p>
+
+<p><a class="button button--success button--rounded button--lg" href="https://github.com/kitian616/jekyll-TeXt-theme/archive/master.zip"><i class="fas fa-download"></i> Download TeXt Theme</a></p>
+
+<p>If you host your site on GitHub Pages, you can just fork <a href="https://github.com/kitian616/jekyll-TeXt-theme">jekyll-TeXt-theme</a>, then rename the repository to <strong>USERNAME.github.io</strong> — replacing <strong>USERNAME</strong> with your GitHub username.</p>
+
+<p><img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/docs/assets/images/github-fork.png" alt="Fork" /></p>
+
+<p><img src="https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/docs/assets/images/github-rename-repo.png" alt="Rename" /></p>
+
+<h3 id="ruby-gem-method">Ruby Gem Method</h3>
+
+<p>Add this line to your Jekyll site’s <code class="highlighter-rouge">Gemfile</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gem</span> <span class="s2">"jekyll-text-theme"</span>
+</code></pre></div></div>
+
+<p>Add this line to your Jekyll site’s <code class="highlighter-rouge">_config.yml</code> file:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">theme</span><span class="pi">:</span> <span class="s">jekyll-text-theme</span>
+</code></pre></div></div>
+
+<p>Then run Bundler to install the theme gem and dependencies:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">install</span>
+</code></pre></div></div>
+
+<h2 id="setup-your-site">Setup Your Site</h2>
+
+<p>If you install the theme with common method, you can go straight to the next step. But <strong>if you install the theme with ruby gem method, you have to do some extra jobs</strong>.</p>
+
+<p>With gem-based themes, some of the site’s directories (such as the assets, _layouts, _includes, and _sass directories) are stored in the theme’s gem, hidden from your immediate view. You need add some files in your Jekyll site directory:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── 404.html
+├── Gemfile
+├── _config.yml
+├── _data
+│   └── locale.yml
+├── _posts
+│   └── ...
+├── about.md
+├── all.html
+└── index.html
+</code></pre></div></div>
+
+<p>You can reffer to the <a href="https://github.com/kitian616/jekyll-TeXt-theme/tree/master/test">/test folder</a>, this is a example with gem-based themes.</p>
+
+<h2 id="local-preview">Local Preview</h2>
+
+<p>Run <code class="highlighter-rouge">bundle exec jekyll serve</code> to start the development server, then you can visit <a href="http://localhost:4000/">http://localhost:4000/</a> to preview your site.</p>
+
+<h2 id="build-and-publish">Build and Publish</h2>
+
+<p>If you host your site on GitHub Pages, just push the source to the master branch of your USERNAME.github.io repository, GitHub would build automatically. You can visit your site on <strong>https://USERNAME.github.io</strong> several minutes later.</p>
+
+<p>If you host your site on your server, you need first run <code class="highlighter-rouge">JEKYLL_ENV=production bundle exec jekyll build</code> to generated your site, then update the files in _site folder to your server.</p>
+</div>
+
+  <footer class="article-footer"><meta itemprop="dateModified" content=""></footer></div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    $(function() {
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1, h2, h3, h4, h5, h6').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();</script></div><section class="page__comment"><div id="js-gitalk-container"></div><script>
+		window.Lazyload.css('https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.css');
+		window.Lazyload.js('https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.js', function() {
+			var gitalk = new Gitalk({
+				clientID: '143666b578a416f82175',
+				clientSecret: '1d1c0604a1a4bff9b59ab7f56724dc0e8b837775',
+				repo: 'gitalk-demo',
+				owner: 'kitian616',
+				admin: ['kitian616'],
+				id: 'docs-quick-start'
+			});
+			gitalk.render('js-gitalk-container');
+		});
+	</script></section></article>
           </div></div></div>
 
       <div class="page__footer">
@@ -547,7 +667,82 @@
   });
 })();/*(function () {
 
-})();*/</script><script>
+})();*/</script><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $pageRoot = $('.js-page-root');
+    var $sidebarShow = $('.js-sidebar-show');
+    var $sidebarHide = $('.js-sidebar-hide');
+    $sidebarShow.on('click', function() {
+      $pageRoot.addClass('show-sidebar');
+    });
+    $sidebarHide.on('click', function() {
+      $pageRoot.removeClass('show-sidebar');
+    });
+  });
+})();</script><script>
+  /* toc must before affix, since affix need to konw toc' height. */(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  var TOC_SELECTOR = window.TEXT_VARIABLES.site.toc.selectors;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window);
+    var $articleContent = $('.js-article-content');
+    var $tocRoot = $('.js-toc-root'), $col2 = $('.js-col-2');
+    var toc;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+    var hasToc = $articleContent.find(TOC_SELECTOR).length > 0;
+
+    function disabled() {
+      return $col2.css('display') === 'none' || !hasToc;
+    }
+
+    tocDisabled = disabled();
+
+    setTimeout(function() {
+      toc = $tocRoot.toc({
+        selectors: TOC_SELECTOR,
+        container: $articleContent,
+        scrollTarget: hasSidebar ? '.js-page-main' : null,
+        scroller: hasSidebar ? '.js-page-main' : null,
+        disabled: tocDisabled
+      });
+    }, 1000);
+
+    $window.on('resize', window.throttle(function() {
+      tocDisabled = disabled();
+      toc && toc.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+  });
+})();(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window), $pageFooter = $('.js-page-footer');
+    var $pageAside = $('.js-page-aside');
+    var affix;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+
+    setTimeout(function() {
+      affix = $pageAside.affix({
+        offsetBottom: $pageFooter.outerHeight(),
+        scrollTarget: hasSidebar ? '.js-page-main' : null,
+        scroller: hasSidebar ? '.js-page-main' : null,
+        scroll: hasSidebar ? $('.js-page-main').children() : null,
+        disabled: tocDisabled
+      });
+    }, 1000);
+
+    $window.on('resize', window.throttle(function() {
+      affix && affix.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+  });
+})();</script><script>
   window.Lazyload.js(['https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js', 'https://cdn.bootcss.com/Chart.js/2.7.1/Chart.bundle.min.js'], function() {
     var $canvas = null, $this = null, _ctx = null, _text = '';
     $('.language-chart').each(function(){

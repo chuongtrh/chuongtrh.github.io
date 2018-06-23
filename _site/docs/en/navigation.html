@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="en">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>404 - ChuongTran</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>Navigation - ChuongTran</title>
 <meta name="description" content="A customizable Jekyll theme for your blog or site
 ">
-<link rel="canonical" href="https://tranchuong.github.io//404.html"><link rel="alternate" type="application/rss+xml" title="ChuongTran" href="https://tranchuong.github.io//feed.xml">
+<link rel="canonical" href="https://tranchuong.github.io//docs/en/navigation"><link rel="alternate" type="application/rss+xml" title="ChuongTran" href="https://tranchuong.github.io//feed.xml">
 
 <!-- begin favicon --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 <meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
@@ -242,7 +242,14 @@
     window.TEXT_VARIABLES = TEXT_VARIABLES;
   })();
 </script></head>
-  <body><div class="layout--page clearfix"><div class="page__main js-page-main"><div class="page__main-inner">
+  <body><div class="layout--page layout--page--sidebar clearfix js-page-root">
+  <div class="page__actions">
+    <div class="button button--circle  button--lg box-shadow-2 sidebar-button js-sidebar-show">
+      <i class="fas fa-bars icon--show"></i>
+    </div>
+  </div>
+  <div class="page__sidebar"><div class="sidebar-toc"><ul class="toc toc--navigator"><li class="toc-h1">Start</li><li class="toc-h2"><a href="/docs/en/quick-start">Quick Start</a></li><li class="toc-h2"><a href="/docs/en/structure">Structure</a></li><li class="toc-h1">Customization</li><li class="toc-h2"><a href="/docs/en/configuration">Configuration</a></li><li class="toc-h2 active"><a href="/docs/en/navigation">Navigation</a></li><li class="toc-h2"><a href="/docs/en/layouts">Layouts</a></li><li class="toc-h2"><a href="/docs/en/logo-and-favicon">Logo and Favicon</a></li><li class="toc-h1">Content</li><li class="toc-h2"><a href="/docs/en/writing-posts">Writing Posts</a></li><li class="toc-h2"><a href="/docs/en/markdown-enhancements">Markdown Enhancements</a></li><li class="toc-h2"><a href="/docs/en/additional-styles">Additional styles</a></li><li class="toc-h1">Dev</li></ul></div></div>
+  <div class="page__mask js-sidebar-hide"></div><div class="page__main js-page-main has-aside"><div class="page__main-inner">
     <div></div><div class="page__header"><header class="header">
   <div class="main clearfix">
     <div class="logo"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -257,15 +264,83 @@
       <ul><li><a href="/docs/en/quick-start">Docs</a></li><li><a href="/docs/zh/quick-start">文档</a></li><li><a href="/archive.html">Archive</a></li><li><a href="/about/">About</a></li><li><a href="https://github.com/kitian616/jekyll-TeXt-theme">GitHub</a></li></ul>
     </nav></div>
 </header>
-</div><div class="page__content"><div class ="main"><div class="col-2 js-col-2"></div>
+</div><div class="page__content"><div class ="main"><div class="col-2 js-col-2"><aside class="page__aside js-page-aside"><div class="toc-aside js-toc-root"></div></aside></div>
 
           <div class="col-1">
-            <article><div class="article-info clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Tian Qi"/></meta></div>
-<div class="js-article-content"><div class="layout--404">
-  <div class="main">
-    <h1>404</h1>
-  </div>
-</div></div><section class="page__comment"></section></article>
+            <article><div class="main__title"><h1>Navigation</h1></div><div class="article-info clearfix"><meta itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Tian Qi"/></meta></div>
+<div class="js-article-content"><div class="layout--article">
+
+  <div class="article-content" itemprop="articleBody"><p>There are two types of navigation in TeXt: <strong>Header Navigation</strong> and <strong>Sidebar Navigation</strong>, both are defined in data/navigation.yml.</p>
+
+<!--more-->
+
+<h2 id="header-navigation">Header Navigation</h2>
+
+<p>Header navigation is defined under the <code class="highlighter-rouge">header</code> key in data/navigation.yml, it is an array of title(s) and url:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">header</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span>      <span class="s">Docs</span>
+    <span class="na">url</span><span class="pi">:</span>        <span class="s">/docs/en/quick-start</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span>      <span class="s">文档</span>
+    <span class="na">url</span><span class="pi">:</span>        <span class="s">/docs/zh/quick-start</span>
+  <span class="pi">-</span> <span class="na">titles</span><span class="pi">:</span>
+      <span class="na">en</span><span class="pi">:</span>       <span class="s">Archive</span>
+      <span class="na">zh</span><span class="pi">:</span>       <span class="s">归档</span>
+      <span class="na">zh-Hans</span><span class="pi">:</span>  <span class="s">归档</span>
+      <span class="na">zh-Hant</span><span class="pi">:</span>  <span class="s">歸檔</span>
+    <span class="na">url</span><span class="pi">:</span>        <span class="s">/archive.html</span>
+  <span class="pi">-</span> <span class="na">titles</span><span class="pi">:</span>
+      <span class="na">en</span><span class="pi">:</span>       <span class="s">About</span>
+      <span class="na">zh</span><span class="pi">:</span>       <span class="s">关于</span>
+      <span class="na">zh-Hans</span><span class="pi">:</span>  <span class="s">关于</span>
+      <span class="na">zh-Hant</span><span class="pi">:</span>  <span class="s">關於</span>
+    <span class="na">url</span><span class="pi">:</span>        <span class="s">/about.html</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span>      <span class="s">GitHub</span>
+    <span class="na">url</span><span class="pi">:</span>        <span class="s">https://github.com/kitian616/jekyll-TeXt-theme</span>
+</code></pre></div></div>
+
+<p>You can ues <code class="highlighter-rouge">titles</code> for a multi-language name.</p>
+</div>
+
+  <footer class="article-footer"><meta itemprop="dateModified" content=""></footer></div>
+
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    $(function() {
+      var $this ,$scroll;
+      var $articleContent = $('.js-article-content');
+      var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+      var scroll = hasSidebar ? '.js-page-main' : 'html, body';
+      $scroll = $(scroll);
+
+      $articleContent.find('.highlight').each(function() {
+        $this = $(this);
+        $this.attr('data-lang', $this.find('code').attr('data-lang'));
+      });
+      $articleContent.find('h1, h2, h3, h4, h5, h6').each(function() {
+        $this = $(this);
+        $this.append($('<a class="anchor" aria-hidden="true"></a>').html('<i class="fas fa-anchor"></i>'));
+      });
+      $articleContent.on('click', '.anchor', function() {
+        $scroll.scrollToAnchor('#' + $(this).parent().attr('id'), 400);
+      });
+    });
+  });
+})();</script></div><section class="page__comment"><div id="js-gitalk-container"></div><script>
+		window.Lazyload.css('https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.css');
+		window.Lazyload.js('https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.js', function() {
+			var gitalk = new Gitalk({
+				clientID: '143666b578a416f82175',
+				clientSecret: '1d1c0604a1a4bff9b59ab7f56724dc0e8b837775',
+				repo: 'gitalk-demo',
+				owner: 'kitian616',
+				admin: ['kitian616'],
+				id: 'docs-navigation'
+			});
+			gitalk.render('js-gitalk-container');
+		});
+	</script></section></article>
           </div></div></div>
 
       <div class="page__footer">
@@ -547,7 +622,82 @@
   });
 })();/*(function () {
 
-})();*/</script><script>
+})();*/</script><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $pageRoot = $('.js-page-root');
+    var $sidebarShow = $('.js-sidebar-show');
+    var $sidebarHide = $('.js-sidebar-hide');
+    $sidebarShow.on('click', function() {
+      $pageRoot.addClass('show-sidebar');
+    });
+    $sidebarHide.on('click', function() {
+      $pageRoot.removeClass('show-sidebar');
+    });
+  });
+})();</script><script>
+  /* toc must before affix, since affix need to konw toc' height. */(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  var TOC_SELECTOR = window.TEXT_VARIABLES.site.toc.selectors;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window);
+    var $articleContent = $('.js-article-content');
+    var $tocRoot = $('.js-toc-root'), $col2 = $('.js-col-2');
+    var toc;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+    var hasToc = $articleContent.find(TOC_SELECTOR).length > 0;
+
+    function disabled() {
+      return $col2.css('display') === 'none' || !hasToc;
+    }
+
+    tocDisabled = disabled();
+
+    setTimeout(function() {
+      toc = $tocRoot.toc({
+        selectors: TOC_SELECTOR,
+        container: $articleContent,
+        scrollTarget: hasSidebar ? '.js-page-main' : null,
+        scroller: hasSidebar ? '.js-page-main' : null,
+        disabled: tocDisabled
+      });
+    }, 1000);
+
+    $window.on('resize', window.throttle(function() {
+      tocDisabled = disabled();
+      toc && toc.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+
+  });
+})();(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $window = $(window), $pageFooter = $('.js-page-footer');
+    var $pageAside = $('.js-page-aside');
+    var affix;
+    var tocDisabled = false;
+    var hasSidebar = $('.js-page-root').hasClass('layout--page--sidebar');
+
+    setTimeout(function() {
+      affix = $pageAside.affix({
+        offsetBottom: $pageFooter.outerHeight(),
+        scrollTarget: hasSidebar ? '.js-page-main' : null,
+        scroller: hasSidebar ? '.js-page-main' : null,
+        scroll: hasSidebar ? $('.js-page-main').children() : null,
+        disabled: tocDisabled
+      });
+    }, 1000);
+
+    $window.on('resize', window.throttle(function() {
+      affix && affix.setOptions({
+        disabled: tocDisabled
+      });
+    }, 100));
+  });
+})();</script><script>
   window.Lazyload.js(['https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js', 'https://cdn.bootcss.com/Chart.js/2.7.1/Chart.bundle.min.js'], function() {
     var $canvas = null, $this = null, _ctx = null, _text = '';
     $('.language-chart').each(function(){
