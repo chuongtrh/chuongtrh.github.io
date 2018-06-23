@@ -14,6 +14,7 @@
 
 theme: jekyll-text-theme
 
+future: true
 
 ## => Site Settings
 ##############################
