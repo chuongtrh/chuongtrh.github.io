@@ -1,6 +1,8 @@
 source 'https://rubygems.org/'
 
 gemspec
+# gem "jekyll-text-theme"
+
 
 # For dev under windows, I know that yikes....
 
