@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Website of Chuong Tran</title>
+    <title>Categories on Chuong Tran&#39;s blogs</title>
     <link>https://chuongtrh.github.io/categories/</link>
-    <description>Recent content in Categories on Website of Chuong Tran</description>
+    <description>Recent content in Categories on Chuong Tran&#39;s blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2020 21:11:56 +0700</lastBuildDate>
     
 	<atom:link href="https://chuongtrh.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>sharing</title>
+      <link>https://chuongtrh.github.io/categories/sharing/</link>
+      <pubDate>Wed, 22 Jul 2020 21:11:56 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/categories/sharing/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>syntax</title>
