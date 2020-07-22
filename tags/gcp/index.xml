@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gcp on Chuong Tran&#39;s blogs</title>
+    <link>https://chuongtrh.github.io/tags/gcp/</link>
+    <description>Recent content in gcp on Chuong Tran&#39;s blogs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 22 Jul 2020 23:18:42 +0700</lastBuildDate>
+    
+	<atom:link href="https://chuongtrh.github.io/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mindmap Gcp</title>
+      <link>https://chuongtrh.github.io/blog/mindmap-gcp/</link>
+      <pubDate>Wed, 22 Jul 2020 23:18:42 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/blog/mindmap-gcp/</guid>
+      <description>The mindmap about Google Cloud Platform (GCP)
+Overview GCP Cloud Function Cloud Run Database Storage </description>
+    </item>
+    
+  </channel>
+</rss>
