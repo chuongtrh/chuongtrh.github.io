@@ -4,17 +4,42 @@
   
   <url>
     <loc>https://chuongtrh.github.io/</loc>
-    <lastmod>2020-07-22T23:18:42+07:00</lastmod>
+    <lastmod>2020-07-23T09:51:56+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://chuongtrh.github.io/post/</loc>
-    <lastmod>2020-07-22T23:18:42+07:00</lastmod>
+    <lastmod>2020-07-23T09:51:56+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://chuongtrh.github.io/categories/</loc>
-    <lastmod>2020-07-22T23:18:42+07:00</lastmod>
+    <lastmod>2020-07-23T09:51:56+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chuongtrh.github.io/tags/graph_database/</loc>
+    <lastmod>2020-07-23T09:51:56+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chuongtrh.github.io/categories/mindmap/</loc>
+    <lastmod>2020-07-23T09:51:56+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chuongtrh.github.io/blog/mindmap-neo4j/</loc>
+    <lastmod>2020-07-23T09:51:56+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chuongtrh.github.io/tags/neo4j/</loc>
+    <lastmod>2020-07-23T09:51:56+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chuongtrh.github.io/tags/</loc>
+    <lastmod>2020-07-23T09:51:56+07:00</lastmod>
   </url>
   
   <url>
@@ -44,11 +69,6 @@
   
   <url>
     <loc>https://chuongtrh.github.io/blog/mindmap-gcp/</loc>
-    <lastmod>2020-07-22T23:18:42+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chuongtrh.github.io/tags/</loc>
     <lastmod>2020-07-22T23:18:42+07:00</lastmod>
   </url>
   
