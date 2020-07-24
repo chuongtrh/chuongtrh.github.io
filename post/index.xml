@@ -6,10 +6,19 @@
     <description>Recent content on Chuong Tran&#39;s blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 23 Jul 2020 22:51:52 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2020 14:42:04 +0700</lastBuildDate>
     
 	<atom:link href="https://chuongtrh.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tiki Explore History Extension</title>
+      <link>https://chuongtrh.github.io/blog/tiki-explore-history-extension/</link>
+      <pubDate>Fri, 24 Jul 2020 14:42:04 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/blog/tiki-explore-history-extension/</guid>
+      <description>Mở đầu Nhân dịp 10 năm tiki có làm event &amp;ldquo;Thập Kỷ đi cùng bạn&amp;rdquo;, để người dùng nhìn lại quá trình mua sắm trên Tiki.</description>
+    </item>
     
     <item>
       <title>Request Lifecycle in Nestjs</title>
