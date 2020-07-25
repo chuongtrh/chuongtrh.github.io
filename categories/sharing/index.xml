@@ -6,10 +6,21 @@
     <description>Recent content in sharing on Chuong Tran&#39;s blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 24 Jul 2020 14:42:04 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2020 10:44:16 +0700</lastBuildDate>
     
 	<atom:link href="https://chuongtrh.github.io/categories/sharing/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tool_visualize_pricing</title>
+      <link>https://chuongtrh.github.io/blog/tool_visualize_pricing/</link>
+      <pubDate>Sat, 25 Jul 2020 10:44:16 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/blog/tool_visualize_pricing/</guid>
+      <description>Tool visualize pricing.
+Demo at https://tool-price-m4.now.sh
+Features  Visualize pricing by day Visualize pricing by hour  Screenshots Visualize pricing by day Visualize pricing by hour Thanks for reading and happy sharing!</description>
+    </item>
     
     <item>
       <title>Tiki Explore History Extension</title>
@@ -26,7 +37,7 @@
       <pubDate>Thu, 23 Jul 2020 22:51:52 +0700</pubDate>
       
       <guid>https://chuongtrh.github.io/blog/request-lifecycle-in-nestjs/</guid>
-      <description>Nest applications handle requests and produce responses in a sequence we refer to as the request lifecycle. With the use of middleware, pipes, guards, and interceptors, it can be challenging to track down where a particular piece of code executes during the request lifecycle, especially as global, controller level, and route level components come into play.</description>
+      <description>Nest applications handle requests and produce responses in a sequence we refer to as the request lifecycle.</description>
     </item>
     
     <item>
@@ -35,8 +46,7 @@
       <pubDate>Wed, 22 Jul 2020 22:20:53 +0700</pubDate>
       
       <guid>https://chuongtrh.github.io/blog/improve-performance-generate-pdf-using-pupppeteer/</guid>
-      <description>How to generate a pdf using puppeteer? Check out at there.
-At this post, I want to share about tip how to improve performance generate pdf.</description>
+      <description>How to generate a pdf using puppeteer? Check out at there.</description>
     </item>
     
     <item>
@@ -45,8 +55,7 @@ At this post, I want to share about tip how to improve performance generate pdf.
       <pubDate>Wed, 22 Jul 2020 21:11:56 +0700</pubDate>
       
       <guid>https://chuongtrh.github.io/blog/generate-a-simple-pdf-from-html/</guid>
-      <description>Generate a simple PDF invoice from HTML using puppeteer &amp;amp; handlebars.
-Introduce  Puppeteer   Puppeteer is Node.js library giving you access to a headless Chrome browser.</description>
+      <description>Generate a simple PDF invoice from HTML using puppeteer &amp;amp; handlebars.</description>
     </item>
     
   </channel>
