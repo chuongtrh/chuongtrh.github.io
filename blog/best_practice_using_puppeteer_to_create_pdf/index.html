@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light"><head>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-81667452-3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-81667452-3');
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/chuongtrh.github.io"
+        },
+        "articleSection" : "post",
+        "name" : "Best_practice_using_puppeteer_to_create_pdf",
+        "headline" : "Best_practice_using_puppeteer_to_create_pdf",
+        "description" : "Which puppeteer we can easy to create PDF from HTML. You can find a previous post at there.",
+        "inLanguage" : "en-US",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "26260",
+        "datePublished": "2020-07-26 08:56:22 \u002b0700 \u002b07",
+        "dateModified" : "2020-07-26 08:56:22 \u002b0700 \u002b07",
+        "url" : "https:\/\/chuongtrh.github.io\/blog\/best_practice_using_puppeteer_to_create_pdf\/",
+        "wordCount" : "582",
+        "keywords" : [ "Blog" ]
+    }
+    </script>
+  <title> Chuong Tran | Best_practice_using_puppeteer_to_create_pdf </title>
+  <meta charset="utf-8"><meta name="generator" content="Hugo 0.74.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Hi, I&#39;m ChuongTran">
+  
+  <link rel="stylesheet" href="https://chuongtrh.github.io/css/style.min.7ebd37dde992a34784e68f22b3d4f217bc14836411b40cc051a01699a75f9e61.css" integrity="sha256-fr033emSo0eE5o8is9TyF7wUg2QRtAzAUaAWmadfnmE=" crossorigin="anonymous"
+    type="text/css"><link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  
+  <link rel="shortcut icon" href="https://chuongtrh.github.io/favicons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://chuongtrh.github.io/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://chuongtrh.github.io/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://chuongtrh.github.io/favicons/favicon-16x16.png">
+  <link rel="canonical" href="https://chuongtrh.github.io/blog/best_practice_using_puppeteer_to_create_pdf/">
+  
+  
+  <script type="text/javascript" src="https://chuongtrh.github.io/js/anatole-header.min.c275265a259296f3dd50e8236a77fcbcadb1dbb9597d3045c675dcc2c7c58a93.js" integrity="sha256-wnUmWiWSlvPdUOgjanf8vK2x27lZfTBFxnXcwsfFipM="
+    crossorigin="anonymous"></script>
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://chuongtrh.github.io/images/site-feature-image.png"/>
+
+<meta name="twitter:title" content="Best_practice_using_puppeteer_to_create_pdf"/>
+<meta name="twitter:description" content="Which puppeteer we can easy to create PDF from HTML. You can find a previous post at there."/>
+
+</head><body><div class="sidebar animated fadeInDown">
+  <div class="logo-title">
+    <div class="title">
+      <img src="https://chuongtrh.github.io/images/profile.jpg" alt="profile picture">
+      <h3 title=""><a href="https://chuongtrh.github.io/"></a></h3>
+      <div class="description">
+        <p>Hi, I&#39;m ChuongTran</p>
+        <p>Welcome to my personal blog!</p>
+      </div>
+    </div>
+  </div>
+  <ul class="social-links">
+    
+    <li>
+      <a href="https://www.linkedin.com/in/chuongtrh" rel="me" aria-label="Linkedin">
+        <i class="fa fa-1x fa-linkedin" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    
+    <li>
+      <a href="https://github.com/chuongtrh" rel="me" aria-label="GitHub">
+        <i class="fa fa-1x fa-github" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    
+    <li>
+      <a href="https://www.facebook.com/chuongtrh" rel="me" aria-label="facebook">
+        <i class="fa fa-1x fa-facebook" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    
+    <li>
+      <a href="mailto:chuongtrh@gmail.com" rel="me" aria-label="e-mail">
+        <i class="fa fa-1x fa-envelope" aria-hidden="true"></i>
+      </a>
+    </li>
+
+    
+  </ul>
+  <div class="footer">
+    <div class="by_farbox">&copy; Chuong Tran 2020 - Theme <a
+        href="https://github.com/lxndrblz/anatole/">anatole</a>
+    </div>
+  </div>
+</div>
+</div><div class="main">
+        <div class="page-top animated fadeInDown">
+    <ul class="nav">
+        
+        
+        
+        <li><a  href="https://chuongtrh.github.io/" title="">Home</a></li>
+        
+        
+        <li><a  href="https://chuongtrh.github.io/post/" title="">Posts</a></li>
+        
+        
+        <li><a  href="https://chuongtrh.github.io/categories/" title="">Categories</a></li>
+        
+        
+        <li><a  href="https://chuongtrh.github.io/about/" title="">About</a></li>
+        
+    </ul>
+    <div class="themeswitcher">
+        <a class="theme-switch" title="Switch Theme">
+            <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </a>
+    </div>
+</div>
+
+        <div class="autopagerize_page_element">
+            <div class="content">
+<div class="post animated fadeInDown">
+  <div class="post-content">
+
+    <div class="post-title">
+      <h3>Best_practice_using_puppeteer_to_create_pdf
+      </h3>
+      
+      <div class="info">
+        <i class="fa fa-sun-o"></i><span class="date">Sun, Jul 26, 2020</span>
+        <i class="fa fa-clock-o"></i><span class="reading-time">3-min</span>
+      </div>
+      
+    </div>
+
+    <p>Which puppeteer we can easy to create PDF from HTML. You can find a previous post at there. <a href="https://chuongtrh.github.io/blog/generate-a-simple-pdf-from-html">How to generate PDF from HTML?</a></p>
+<h2 id="which-is-the-best-practice-using-puppeteer-to-create-pdf">Which is the best practice using puppeteer to create pdf?</h2>
+<p><img src="https://meme.xyz/uploads/posts/t/l-21435-do-you-know-the-way.jpg" alt=""></p>
+<p>Here are two approach using puppeteer.</p>
+<ol>
+<li>Always launch puppeteer and create a new browser to create pdf. The browser will be closed when created pdf is done.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#a6e22e">async</span> () =&gt; {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">finalHtml</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;html content...&#39;</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">browser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">puppeteer</span>.<span style="color:#a6e22e">launch</span>();
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">page</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">browser</span>.<span style="color:#a6e22e">pages</span>()[<span style="color:#ae81ff">0</span>];
+  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">setContent</span>(<span style="color:#a6e22e">finalHtml</span>);
+  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">pdf</span>({<span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;hn.pdf&#39;</span>, <span style="color:#a6e22e">format</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;A4&#39;</span>});
+
+  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">browser</span>.<span style="color:#a6e22e">close</span>();
+})();
+</code></pre></div><ol start="2">
+<li>Keep 1 instance browser. Always create a new page to create pdf. The page will be closed when created pdf is done.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">browser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">puppeteer</span>.<span style="color:#a6e22e">launch</span>();
+
+(<span style="color:#a6e22e">async</span> () =&gt; {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">finalHtml</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;html content...&#39;</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">page</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">browser</span>.<span style="color:#a6e22e">newPage</span>();
+  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">setContent</span>(<span style="color:#a6e22e">finalHtml</span>);
+  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">pdf</span>({<span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;hn.pdf&#39;</span>, <span style="color:#a6e22e">format</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;A4&#39;</span>});
+  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">close</span>();
+})();
+</code></pre></div><h2 id="solution">Solution</h2>
+<ol>
+<li><strong>Short Lived Browser (Opening new browser instance every time)</strong></li>
+</ol>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>A new session opens each time, one instance doesn&rsquo;t interfere with another.</li>
+<li>Perfect for testing multiple credentials over same/multiple websites.</li>
+<li>Can use instance wide proxy.</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>You cannot share data between two instance easily (unless you use <em>userDataDir</em> or <em>cookies</em>).</li>
+<li>Takes more time to open.</li>
+</ul>
+<ol>
+<li><strong>Long Lived Browser (Sharing same browser instance every time)</strong></li>
+</ol>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>Opening a new tab takes way less time than opening a new chrome with empty profile.</li>
+<li>Data is shared between two instance easily. Perfect for scraping/testing same website with same credentials.</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>You won&rsquo;t be able to use authentication and cookies on same website using different credentials.</li>
+<li>Cannot use instance wide proxy (at this moment).</li>
+</ul>
+<h2 id="benchmark">Benchmark</h2>
+<p>Here is a benchmark for running only 100 times.
+The code to run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">bench</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;@entrptaher/async-bench&#34;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">puppeteer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;puppeteer&#34;</span>);
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">createNewBrowser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span> <span style="color:#66d9ef">function</span>() {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">finalHtml</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;html content...&#34;</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">browser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">puppeteer</span>.<span style="color:#a6e22e">launch</span>();
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">page</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">browser</span>.<span style="color:#a6e22e">newPage</span>();
+  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">setContent</span>(<span style="color:#a6e22e">finalHtml</span>);
+  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">pdf</span>({ <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;hn_shortlived.pdf&#34;</span>, <span style="color:#a6e22e">format</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;A4&#34;</span> });
+  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">browser</span>.<span style="color:#a6e22e">close</span>();
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+};
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">longLivedBrowser</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">useExisting</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span> <span style="color:#66d9ef">function</span>() {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">finalHtml</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;html content...&#34;</span>;
+  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">longLivedBrowser</span>) {
+    <span style="color:#a6e22e">longLivedBrowser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">puppeteer</span>.<span style="color:#a6e22e">launch</span>();
+  }
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">page</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">longLivedBrowser</span>.<span style="color:#a6e22e">newPage</span>();
+  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">setContent</span>(<span style="color:#a6e22e">finalHtml</span>);
+  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">pdf</span>({ <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;hn_longlived.pdf&#34;</span>, <span style="color:#a6e22e">format</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;A4&#34;</span> });
+  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">close</span>();
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+};
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">longLivedNoNewTab</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">useExitingTab</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span> <span style="color:#66d9ef">function</span>() {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">finalHtml</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;html content...&#34;</span>;
+  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">longLivedNoNewTab</span>) {
+    <span style="color:#a6e22e">longLivedNoNewTab</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">puppeteer</span>.<span style="color:#a6e22e">launch</span>();
+  }
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">page</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">await</span> <span style="color:#a6e22e">longLivedNoNewTab</span>.<span style="color:#a6e22e">pages</span>())[<span style="color:#ae81ff">0</span>];
+  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">setContent</span>(<span style="color:#a6e22e">finalHtml</span>);
+  <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">page</span>.<span style="color:#a6e22e">pdf</span>({ <span style="color:#a6e22e">path</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;hn_longlived.pdf&#34;</span>, <span style="color:#a6e22e">format</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;A4&#34;</span> });
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">times</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>;
+
+Promise.<span style="color:#a6e22e">all</span>([
+  <span style="color:#a6e22e">bench</span>(<span style="color:#a6e22e">createNewBrowser</span>, <span style="color:#a6e22e">times</span>),
+  <span style="color:#a6e22e">bench</span>(<span style="color:#a6e22e">useExisting</span>, <span style="color:#a6e22e">times</span>),
+  <span style="color:#a6e22e">bench</span>(<span style="color:#a6e22e">useExitingTab</span>, <span style="color:#a6e22e">times</span>)
+]).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>);
+</code></pre></div><p>The result:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">[ { <span style="color:#a6e22e">meanExecTime</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">277.3644104500115</span>,
+    <span style="color:#a6e22e">execTime</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">27736.44104500115</span>,
+    <span style="color:#a6e22e">resultOfMethod</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> },
+  { <span style="color:#a6e22e">meanExecTime</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">36.89182792000472</span>,
+    <span style="color:#a6e22e">execTime</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3689.1827920004725</span>,
+    <span style="color:#a6e22e">resultOfMethod</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> },
+  { <span style="color:#a6e22e">meanExecTime</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">11.07780257999897</span>,
+    <span style="color:#a6e22e">execTime</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1107.780257999897</span>,
+    <span style="color:#a6e22e">resultOfMethod</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> } ]
+</code></pre></div><p>Each has following:</p>
+<ul>
+<li><em>meanExecTime</em>: Average time to run</li>
+<li><em>execTime</em>: Total time to run</li>
+<li><em>resultOfMethod</em>: Just some result for identification</li>
+</ul>
+<p>The benchmark is incomplete because it doesn&rsquo;t have the machine details etc. But it definitely shows that opening browser each time will result in more time, even if it&rsquo;s only 100 times.</p>
+<p>On second function, you will also notice opening a new tab takes time, so on third function if you don&rsquo;t close the page, it will take even less time.</p>
+<h2 id="summary">Summary</h2>
+<ul>
+<li>If you need performance (11ms compared to 277ms), don&rsquo;t care about session, go for existing tab.</li>
+<li>If you want to run multiple test on same window in parallel, go for new tab.</li>
+<li>If you need sessions and persistence, go for new browser instance.</li>
+</ul>
+<p>More detail at this <a href="https://stackoverflow.com/questions/54965045/which-is-the-best-practice-using-puppeteer-to-create-pdf">post</a> on Stackoverflow.</p>
+<p>Thanks <strong>@Md. Abu Taher</strong> answer on my post.</p>
+<h3 id="thanks-for-reading-and-happy-sharing">Thanks for reading and happy sharing</h3>
+
+  </div>
+  <div class="post-footer">
+    <div class="info">
+      
+      
+    </div>
+  </div>
+
+  
+  
+  
+</div>
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+<script type="text/javascript" src="https://chuongtrh.github.io/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js" integrity="sha256-hrHo&#43;BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw=" crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript" src="https://chuongtrh.github.io/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js" integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://chuongtrh.github.io/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js" integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro=" crossorigin="anonymous"></script></html></body>
+
+</html>

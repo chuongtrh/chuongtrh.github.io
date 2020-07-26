@@ -156,14 +156,14 @@
 </div>
 
 <h2 id="build-opencv-on-osx">Build OpenCV on OSX</h2>
-<h4 id="required">Required</h4>
+<h3 id="required">Required</h3>
 <ul>
 <li>CMake 2.8.8 or higher</li>
 <li>Xcode 10 or higher</li>
 <li>Python 2.7 or higher</li>
 <li></li>
 </ul>
-<h4 id="building-opencv-from-source">Building OpenCV from Source</h4>
+<h3 id="building-opencv-from-source">Building OpenCV from Source</h3>
 <pre><code>git clone https://github.com/opencv/opencv.git
 python opencv/platforms/ios/build_framework.py ios
 </code></pre>
@@ -182,69 +182,69 @@ python opencv/platforms/ios/build_framework.py ios
 <li>Similate the result on screen.</li>
 </ul>
 <p>Using function HoughCircles in openCV to detect array circles from image</p>
-<pre><code>+ (NSDictionary *)hack:(NSImage *)image {
-    cv::Mat src;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objective-c" data-lang="objective-c">+ (NSDictionary <span style="color:#f92672">*</span>)<span style="color:#a6e22e">hack:</span>(NSImage <span style="color:#f92672">*</span>)image {
+    cv<span style="color:#f92672">::</span>Mat src;
     NSImageToMat(image, src);
     
-    cv::Mat gray;
-    cv::cvtColor(src, gray, cv::COLOR_BGR2GRAY);
-    cv::medianBlur(gray, gray, 5);
-    std::vector&lt;cv::Vec3f&gt; circles;
-    HoughCircles(gray, circles, cv::HOUGH_GRADIENT, 1,
-                 src.rows/16,
-                 100, 70, 10, 300
+    cv<span style="color:#f92672">::</span>Mat gray;
+    cv<span style="color:#f92672">::</span>cvtColor(src, gray, cv<span style="color:#f92672">::</span>COLOR_BGR2GRAY);
+    cv<span style="color:#f92672">::</span>medianBlur(gray, gray, <span style="color:#ae81ff">5</span>);
+    std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span>cv<span style="color:#f92672">::</span>Vec3f<span style="color:#f92672">&gt;</span> circles;
+    HoughCircles(gray, circles, cv<span style="color:#f92672">::</span>HOUGH_GRADIENT, <span style="color:#ae81ff">1</span>,
+                 src.rows<span style="color:#f92672">/</span><span style="color:#ae81ff">16</span>,
+                 <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">70</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">300</span>
                  );
     
-    cv::Point tempPoint;
-    NSMutableArray *arrPoints = [[NSMutableArray alloc] init];
+    cv<span style="color:#f92672">::</span>Point tempPoint;
+    NSMutableArray <span style="color:#f92672">*</span>arrPoints <span style="color:#f92672">=</span> [[NSMutableArray alloc] init];
     
-    if(circles.size() &gt; 3) {
+    <span style="color:#66d9ef">if</span>(circles.size() <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">3</span>) {
         
-        std::vector&lt;cv::Vec3b&gt; vColors;
+        std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span>cv<span style="color:#f92672">::</span>Vec3b<span style="color:#f92672">&gt;</span> vColors;
 
-        int tempRadius = circles[0][2];
-        for( size_t i = 0; i &lt; circles.size(); i++ )
+        <span style="color:#66d9ef">int</span> tempRadius <span style="color:#f92672">=</span> circles[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">2</span>];
+        <span style="color:#66d9ef">for</span>( size_t i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> circles.size(); i<span style="color:#f92672">++</span> )
         {
-            cv::Vec3i c = circles[i];
-            int radius = c[2];
-            //NSLog(@&quot;%ld %d %d&quot;, i, tempRadius, radius);
-            
-            if(std::abs(tempRadius - radius) &lt; 5){
+            cv<span style="color:#f92672">::</span>Vec3i c <span style="color:#f92672">=</span> circles[i];
+            <span style="color:#66d9ef">int</span> radius <span style="color:#f92672">=</span> c[<span style="color:#ae81ff">2</span>];
+            <span style="color:#75715e">//NSLog(@&#34;%ld %d %d&#34;, i, tempRadius, radius);
+</span><span style="color:#75715e"></span>            
+            <span style="color:#66d9ef">if</span>(std<span style="color:#f92672">::</span>abs(tempRadius <span style="color:#f92672">-</span> radius) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>){
                 vColors.push_back(GetColorFromMat(src, c));
-                cv::Point center = cv::Point(c[0], c[1]);
-                cv::circle( src, center, radius-2, cv::Scalar(255,0,255), 2, cv::LINE_AA);
+                cv<span style="color:#f92672">::</span>Point center <span style="color:#f92672">=</span> cv<span style="color:#f92672">::</span>Point(c[<span style="color:#ae81ff">0</span>], c[<span style="color:#ae81ff">1</span>]);
+                cv<span style="color:#f92672">::</span>circle( src, center, radius<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, cv<span style="color:#f92672">::</span>Scalar(<span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">255</span>), <span style="color:#ae81ff">2</span>, cv<span style="color:#f92672">::</span>LINE_AA);
             }
         }
-        for( size_t i = 0; i &lt; vColors.size(); i++ ) {
-            cv::Vec3b color1 = vColors[i];
-            bool flag = true;
-            for( size_t j = 0; j &lt; vColors.size(); j++ ) {
-                cv::Vec3b color2 = vColors[j];
-                if(i!=j &amp;&amp; color1[0]==color2[0] &amp;&amp; color1[1]==color2[1] &amp;&amp; color1[2]==color2[2]) {
-                    flag = false;
+        <span style="color:#66d9ef">for</span>( size_t i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> vColors.size(); i<span style="color:#f92672">++</span> ) {
+            cv<span style="color:#f92672">::</span>Vec3b color1 <span style="color:#f92672">=</span> vColors[i];
+            <span style="color:#66d9ef">bool</span> flag <span style="color:#f92672">=</span> true;
+            <span style="color:#66d9ef">for</span>( size_t j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> vColors.size(); j<span style="color:#f92672">++</span> ) {
+                cv<span style="color:#f92672">::</span>Vec3b color2 <span style="color:#f92672">=</span> vColors[j];
+                <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">!=</span>j <span style="color:#f92672">&amp;&amp;</span> color1[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">==</span>color2[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&amp;&amp;</span> color1[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span>color2[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&amp;&amp;</span> color1[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">==</span>color2[<span style="color:#ae81ff">2</span>]) {
+                    flag <span style="color:#f92672">=</span> false;
                 }
             }
-            if(flag){
-                cv::Vec3i c = circles[i];
-                tempPoint = cv::Point(c[0], c[1]);
-                cv::circle( src, tempPoint, 10, cv::Scalar(255,0,255), 4, cv::LINE_8);
-                NSLog(@&quot;%ld R: %d G:%d B:%d&quot;, i, color1[0], color1[1], color1[2]);
-                [arrPoints addObject: @{ @&quot;x&quot;: [NSNumber numberWithInt:tempPoint.x],
-                                         @&quot;y&quot;: [NSNumber numberWithInt:tempPoint.y]}];
+            <span style="color:#66d9ef">if</span>(flag){
+                cv<span style="color:#f92672">::</span>Vec3i c <span style="color:#f92672">=</span> circles[i];
+                tempPoint <span style="color:#f92672">=</span> cv<span style="color:#f92672">::</span>Point(c[<span style="color:#ae81ff">0</span>], c[<span style="color:#ae81ff">1</span>]);
+                cv<span style="color:#f92672">::</span>circle( src, tempPoint, <span style="color:#ae81ff">10</span>, cv<span style="color:#f92672">::</span>Scalar(<span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">255</span>), <span style="color:#ae81ff">4</span>, cv<span style="color:#f92672">::</span>LINE_8);
+                NSLog(<span style="color:#e6db74">@&#34;%ld R: %d G:%d B:%d&#34;</span>, i, color1[<span style="color:#ae81ff">0</span>], color1[<span style="color:#ae81ff">1</span>], color1[<span style="color:#ae81ff">2</span>]);
+                [arrPoints addObject: <span style="color:#ae81ff">@{</span> <span style="color:#e6db74">@&#34;x&#34;</span><span style="color:#f92672">:</span> [NSNumber numberWithInt:tempPoint.x],
+                                         <span style="color:#e6db74">@&#34;y&#34;</span><span style="color:#f92672">:</span> [NSNumber numberWithInt:tempPoint.y]<span style="color:#ae81ff">}</span>];
             }
         }
-        if(arrPoints.count&gt;1){
-            NSLog(@&quot;xx: %ld&quot;, arrPoints.count);
+        <span style="color:#66d9ef">if</span>(arrPoints.count<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>){
+            NSLog(<span style="color:#e6db74">@&#34;xx: %ld&#34;</span>, arrPoints.count);
         }
     }
    
-    return @{
-        @&quot;image&quot;: MatToNSImage(src),
-        @&quot;points&quot;: arrPoints,
-    };
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">@{</span>
+        <span style="color:#e6db74">@&#34;image&#34;</span><span style="color:#f92672">:</span> MatToNSImage(src),
+        <span style="color:#e6db74">@&#34;points&#34;</span><span style="color:#f92672">:</span> arrPoints,
+    <span style="color:#ae81ff">}</span>;
 }
-</code></pre><p>Full source code at there: <a href="https://github.com/chuongtrh/hack_lyto_different_color_osx">https://github.com/chuongtrh/hack_lyto_different_color_osx</a></p>
-<h5 id="thanks-for-reading-and-happy-sharing">Thanks for reading and happy sharing!</h5>
+</code></pre></div><p>Full source code at there: <a href="https://github.com/chuongtrh/hack_lyto_different_color_osx">https://github.com/chuongtrh/hack_lyto_different_color_osx</a></p>
+<h3 id="thanks-for-reading-and-happy-sharing">Thanks for reading and happy sharing</h3>
 
   </div>
   <div class="post-footer">
