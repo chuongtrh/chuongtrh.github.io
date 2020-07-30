@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>twilio on Chuong Tran&#39;s blogs</title>
+    <link>https://chuongtrh.github.io/tags/twilio/</link>
+    <description>Recent content in twilio on Chuong Tran&#39;s blogs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 30 Jul 2020 22:58:21 +0700</lastBuildDate>
+    
+	<atom:link href="https://chuongtrh.github.io/tags/twilio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Build Whatsapp Bot using Twilio</title>
+      <link>https://chuongtrh.github.io/blog/build-whatsapp-bot-using-twilio/</link>
+      <pubDate>Thu, 30 Jul 2020 22:58:21 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/blog/build-whatsapp-bot-using-twilio/</guid>
+      <description>Using Twilio API for WhatsApp to build a bot.
+Features:  /wiki using duckduckgo /unsplash using unsplash /loremflickr using loremflickr /chart using quickchart  Screenshots How to use  Install the dependencies  $ npm install  Create file .</description>
+    </item>
+    
+  </channel>
+</rss>

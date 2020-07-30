@@ -6,10 +6,30 @@
     <description>Recent content in swift on Chuong Tran&#39;s blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 30 Jul 2020 10:30:26 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2020 22:41:13 +0700</lastBuildDate>
     
 	<atom:link href="https://chuongtrh.github.io/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Generate Palette From Image</title>
+      <link>https://chuongtrh.github.io/blog/generate-palette-from-image/</link>
+      <pubDate>Thu, 30 Jul 2020 22:41:13 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/blog/generate-palette-from-image/</guid>
+      <description>Inspire from EarthView from Google.
+Using 3rd party ColorThiefSwift to generate palette.</description>
+    </item>
+    
+    <item>
+      <title>PixColor iOS</title>
+      <link>https://chuongtrh.github.io/blog/pixcolor-ios/</link>
+      <pubDate>Thu, 30 Jul 2020 22:35:25 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/blog/pixcolor-ios/</guid>
+      <description>Generate palette color from image
+Features  Explore image from unsplash.</description>
+    </item>
     
     <item>
       <title>Trick convert gif to gif3d</title>
