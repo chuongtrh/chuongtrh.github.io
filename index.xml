@@ -6,35 +6,45 @@
     <description>Recent content on Chuong Tran&#39;s blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 26 Jul 2020 08:56:22 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2020 10:30:26 +0700</lastBuildDate>
     
 	<atom:link href="https://chuongtrh.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Best_practice_using_puppeteer_to_create_pdf</title>
-      <link>https://chuongtrh.github.io/blog/best_practice_using_puppeteer_to_create_pdf/</link>
+      <title>Trick convert gif to gif3d</title>
+      <link>https://chuongtrh.github.io/blog/trick-convert-gif-to-gif3d/</link>
+      <pubDate>Thu, 30 Jul 2020 10:30:26 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/blog/trick-convert-gif-to-gif3d/</guid>
+      <description>Trick convert gif to gif3d using Swift
+Features  Simple way to convert gif to gif3d Change background Change size eraser tool  How to work  Add a layer with two white line on top every frame from orignal gif Try to eraser white line to fix with your gif Combine layers and convert to gif  Screenshots Before</description>
+    </item>
+    
+    <item>
+      <title>Best practice using puppeteer to create PDF</title>
+      <link>https://chuongtrh.github.io/blog/best-practice-using-puppeteer-to-create-pdf/</link>
       <pubDate>Sun, 26 Jul 2020 08:56:22 +0700</pubDate>
       
-      <guid>https://chuongtrh.github.io/blog/best_practice_using_puppeteer_to_create_pdf/</guid>
+      <guid>https://chuongtrh.github.io/blog/best-practice-using-puppeteer-to-create-pdf/</guid>
       <description>Which puppeteer we can easy to create PDF from HTML. You can find a previous post at there.</description>
     </item>
     
     <item>
-      <title>Tool_visualize_pricing</title>
-      <link>https://chuongtrh.github.io/blog/tool_visualize_pricing/</link>
+      <title>Tool visualize pricing</title>
+      <link>https://chuongtrh.github.io/blog/tool-visualize-pricing/</link>
       <pubDate>Sat, 25 Jul 2020 10:44:16 +0700</pubDate>
       
-      <guid>https://chuongtrh.github.io/blog/tool_visualize_pricing/</guid>
+      <guid>https://chuongtrh.github.io/blog/tool-visualize-pricing/</guid>
       <description>Tool visualize pricing. This is a simple tool help internal QC&amp;rsquo;s team testing business logic for CPQ (Configure Price Quote).</description>
     </item>
     
     <item>
-      <title>Hack_lyto_different_color_osx</title>
-      <link>https://chuongtrh.github.io/blog/hack_lyto_different_color_osx/</link>
+      <title>Using OpenCV to hack game Lyto Different Color on OSX</title>
+      <link>https://chuongtrh.github.io/blog/using-opencv-to-hack-game-lyto-different-color-on-osx/</link>
       <pubDate>Sat, 25 Jul 2020 10:16:37 +0700</pubDate>
       
-      <guid>https://chuongtrh.github.io/blog/hack_lyto_different_color_osx/</guid>
+      <guid>https://chuongtrh.github.io/blog/using-opencv-to-hack-game-lyto-different-color-on-osx/</guid>
       <description>Using OpenCV to hack game Lyto different color on OSX.</description>
     </item>
     
@@ -57,20 +67,20 @@
     </item>
     
     <item>
-      <title>Mindmap Neo4j</title>
-      <link>https://chuongtrh.github.io/blog/mindmap-neo4j/</link>
+      <title>Mindmap about Neo4j</title>
+      <link>https://chuongtrh.github.io/blog/mindmap-about-neo4j/</link>
       <pubDate>Thu, 23 Jul 2020 09:51:56 +0700</pubDate>
       
-      <guid>https://chuongtrh.github.io/blog/mindmap-neo4j/</guid>
+      <guid>https://chuongtrh.github.io/blog/mindmap-about-neo4j/</guid>
       <description>A mindmap about Neo4j.</description>
     </item>
     
     <item>
-      <title>Mindmap GCP</title>
-      <link>https://chuongtrh.github.io/blog/mindmap-gcp/</link>
+      <title>Mindmap about GCP</title>
+      <link>https://chuongtrh.github.io/blog/mindmap-about-gcp/</link>
       <pubDate>Wed, 22 Jul 2020 23:18:42 +0700</pubDate>
       
-      <guid>https://chuongtrh.github.io/blog/mindmap-gcp/</guid>
+      <guid>https://chuongtrh.github.io/blog/mindmap-about-gcp/</guid>
       <description>The mindmap about Google Cloud Platform (GCP).
   Overview GCP   Cloud Function   Cloud Run   Database   Storage   </description>
     </item>

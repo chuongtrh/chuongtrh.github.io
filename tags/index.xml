@@ -6,10 +6,55 @@
     <description>Recent content in Tags on Chuong Tran&#39;s blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 25 Jul 2020 10:44:16 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2020 10:30:26 +0700</lastBuildDate>
     
 	<atom:link href="https://chuongtrh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gif</title>
+      <link>https://chuongtrh.github.io/tags/gif/</link>
+      <pubDate>Thu, 30 Jul 2020 10:30:26 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/tags/gif/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>swift</title>
+      <link>https://chuongtrh.github.io/tags/swift/</link>
+      <pubDate>Thu, 30 Jul 2020 10:30:26 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/tags/swift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>html</title>
+      <link>https://chuongtrh.github.io/tags/html/</link>
+      <pubDate>Sun, 26 Jul 2020 08:56:22 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pdf</title>
+      <link>https://chuongtrh.github.io/tags/pdf/</link>
+      <pubDate>Sun, 26 Jul 2020 08:56:22 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/tags/pdf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>puppeteer</title>
+      <link>https://chuongtrh.github.io/tags/puppeteer/</link>
+      <pubDate>Sun, 26 Jul 2020 08:56:22 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/tags/puppeteer/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>cpq</title>
@@ -44,15 +89,6 @@
       <pubDate>Sat, 25 Jul 2020 10:16:37 +0700</pubDate>
       
       <guid>https://chuongtrh.github.io/tags/opencv/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>swift</title>
-      <link>https://chuongtrh.github.io/tags/swift/</link>
-      <pubDate>Sat, 25 Jul 2020 10:16:37 +0700</pubDate>
-      
-      <guid>https://chuongtrh.github.io/tags/swift/</guid>
       <description></description>
     </item>
     
@@ -143,33 +179,6 @@
       <pubDate>Wed, 22 Jul 2020 22:20:53 +0700</pubDate>
       
       <guid>https://chuongtrh.github.io/tags/handlebars/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>html</title>
-      <link>https://chuongtrh.github.io/tags/html/</link>
-      <pubDate>Wed, 22 Jul 2020 22:20:53 +0700</pubDate>
-      
-      <guid>https://chuongtrh.github.io/tags/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pdf</title>
-      <link>https://chuongtrh.github.io/tags/pdf/</link>
-      <pubDate>Wed, 22 Jul 2020 22:20:53 +0700</pubDate>
-      
-      <guid>https://chuongtrh.github.io/tags/pdf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>puppeteer</title>
-      <link>https://chuongtrh.github.io/tags/puppeteer/</link>
-      <pubDate>Wed, 22 Jul 2020 22:20:53 +0700</pubDate>
-      
-      <guid>https://chuongtrh.github.io/tags/puppeteer/</guid>
       <description></description>
     </item>
     

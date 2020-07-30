@@ -12,20 +12,20 @@
     
     
     <item>
-      <title>Mindmap Neo4j</title>
-      <link>https://chuongtrh.github.io/blog/mindmap-neo4j/</link>
+      <title>Mindmap about Neo4j</title>
+      <link>https://chuongtrh.github.io/blog/mindmap-about-neo4j/</link>
       <pubDate>Thu, 23 Jul 2020 09:51:56 +0700</pubDate>
       
-      <guid>https://chuongtrh.github.io/blog/mindmap-neo4j/</guid>
+      <guid>https://chuongtrh.github.io/blog/mindmap-about-neo4j/</guid>
       <description>A mindmap about Neo4j.</description>
     </item>
     
     <item>
-      <title>Mindmap GCP</title>
-      <link>https://chuongtrh.github.io/blog/mindmap-gcp/</link>
+      <title>Mindmap about GCP</title>
+      <link>https://chuongtrh.github.io/blog/mindmap-about-gcp/</link>
       <pubDate>Wed, 22 Jul 2020 23:18:42 +0700</pubDate>
       
-      <guid>https://chuongtrh.github.io/blog/mindmap-gcp/</guid>
+      <guid>https://chuongtrh.github.io/blog/mindmap-about-gcp/</guid>
       <description>The mindmap about Google Cloud Platform (GCP).
   Overview GCP   Cloud Function   Cloud Run   Database   Storage   </description>
     </item>

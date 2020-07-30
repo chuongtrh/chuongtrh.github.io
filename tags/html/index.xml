@@ -6,10 +6,19 @@
     <description>Recent content in html on Chuong Tran&#39;s blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 22 Jul 2020 22:20:53 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2020 08:56:22 +0700</lastBuildDate>
     
 	<atom:link href="https://chuongtrh.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Best practice using puppeteer to create PDF</title>
+      <link>https://chuongtrh.github.io/blog/best-practice-using-puppeteer-to-create-pdf/</link>
+      <pubDate>Sun, 26 Jul 2020 08:56:22 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/blog/best-practice-using-puppeteer-to-create-pdf/</guid>
+      <description>Which puppeteer we can easy to create PDF from HTML. You can find a previous post at there.</description>
+    </item>
     
     <item>
       <title>Improve Performance Generate Pdf Using Pupppeteer</title>
