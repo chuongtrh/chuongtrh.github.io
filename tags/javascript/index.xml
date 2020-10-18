@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on Chuong Tran&#39;s blogs</title>
+    <link>https://chuongtrh.github.io/tags/javascript/</link>
+    <description>Recent content in javascript on Chuong Tran&#39;s blogs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 22 Aug 2020 11:57:01 +0700</lastBuildDate>
+    
+	<atom:link href="https://chuongtrh.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Series Javascript and Node.js</title>
+      <link>https://chuongtrh.github.io/blog/series-javascript-and-node.js/</link>
+      <pubDate>Sat, 22 Aug 2020 11:57:01 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/blog/series-javascript-and-node.js/</guid>
+      <description>This is a series about Javascript and Node.js. Reference from many sources and websites.</description>
+    </item>
+    
+  </channel>
+</rss>
