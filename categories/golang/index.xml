@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Godepgraph - Visualize Go package from https://pkg.go.dev</title>
-      <link>https://chuongtrh.github.io/blog/godepgraph-visualize-go-package-from-https/pkg.go.dev/</link>
+      <title>Godepgraph - Visualize Go package from pkg.go.dev</title>
+      <link>https://chuongtrh.github.io/blog/godepgraph-visualize-go-package-from-pkg.go.dev/</link>
       <pubDate>Sun, 18 Oct 2020 10:03:10 +0700</pubDate>
       
-      <guid>https://chuongtrh.github.io/blog/godepgraph-visualize-go-package-from-https/pkg.go.dev/</guid>
-      <description>Godepgraph - Visualize Go package from https://pkg.go.dev.
+      <guid>https://chuongtrh.github.io/blog/godepgraph-visualize-go-package-from-pkg.go.dev/</guid>
+      <description>Godepgraph - Visualize Go package from pkg.go.dev.
 Demo at https://godepgraph.vercel.app</description>
     </item>
     
@@ -28,7 +28,7 @@ Demo at https://godepgraph.vercel.app</description>
       
       <guid>https://chuongtrh.github.io/blog/godepviz-visualize-go-imports-in-graphviz-dot-format/</guid>
       <description>Visualize Go imports in Graphviz DOT format.
-Support visualize package from https://pkg.</description>
+Support visualize package from pkg.</description>
     </item>
     
   </channel>
