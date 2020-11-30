@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.74.2" />
+
+
+<link rel="ChuongTran's blog" href="/favicons/favicon.ico" />
+
+
+<title>Using OpenCV to hack game Lyto Different Color on OSX - Chuong Tran&#39;s blogs</title>
+
+
+<meta name="author" content="Chuong Tran" />
+
+
+<meta name="description" content="Using OpenCV to hack game Lyto Different Color on OSX" />
+
+
+<meta name="keywords" content="swift, opencv" />
+
+<meta property="og:title" content="Using OpenCV to hack game Lyto Different Color on OSX" />
+<meta property="og:description" content="Using OpenCV to hack game Lyto Different Color on OSX" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chuongtrh.github.io/post/hack_lyto_different_color_osx/" />
+<meta property="og:image" content="https://chuongtrh.github.io/images/profile.jpg"/>
+<meta property="article:published_time" content="2020-07-25T10:16:37+07:00" />
+<meta property="article:modified_time" content="2020-07-25T10:16:37+07:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://chuongtrh.github.io/images/profile.jpg"/>
+
+<meta name="twitter:title" content="Using OpenCV to hack game Lyto Different Color on OSX"/>
+<meta name="twitter:description" content="Using OpenCV to hack game Lyto Different Color on OSX"/>
+
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+
+<link rel="stylesheet" href="https://chuongtrh.github.io/assets/css/fuji.min.css" />
+
+
+
+
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-81667452-3');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-81667452-3"></script>
+
+
+</head>
+
+<body data-theme="auto">
+    <script data-cfasync="false">
+  
+  var fujiThemeData = localStorage.getItem('fuji_data-theme');
+  
+  if (!fujiThemeData) {
+    localStorage.setItem('fuji_data-theme', 'auto');
+  } else {
+    
+    if (fujiThemeData !== 'auto') {
+      document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+    }
+  }
+</script>
+
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="https://chuongtrh.github.io">Chuong Tran&#39;s blogs</a>
+            
+            <span class="title-sub">Stay hungry stay foolish</span>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://chuongtrh.github.io/post/hack_lyto_different_color_osx/">Using OpenCV to hack game Lyto Different Color on OSX</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-07-25</span><span><i class="iconfont icon-time-sharp"></i>&nbsp;2 minutes</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/swift">swift</a>&nbsp;<a href="/tags/opencv">opencv</a>&nbsp;</span>
+
+    </div>
+    
+    
+    <div class="post-content markdown-body">
+        <p>Using OpenCV to hack game Lyto different color on OSX.</p>
+<p>Demo with 193 level</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/WI162qIHEGA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h2 id="build-opencv-on-osx">Build OpenCV on OSX</h2>
+<h3 id="required">Required</h3>
+<ul>
+<li>CMake 2.8.8 or higher</li>
+<li>Xcode 10 or higher</li>
+<li>Python 2.7 or higher</li>
+<li></li>
+</ul>
+<h3 id="building-opencv-from-source">Building OpenCV from Source</h3>
+<pre><code>git clone https://github.com/opencv/opencv.git
+python opencv/platforms/ios/build_framework.py ios
+</code></pre>
+<p>Copy opencv2.framework into hackcolor directory.</p>
+<h2 id="methodology">Methodology</h2>
+<ul>
+<li>Take a screenshot of the rect of screen.</li>
+<li>Detect the circles in the screenshot using Hough in OpenCV.</li>
+<li>Process circles:
+<ul>
+<li>Check radius</li>
+<li>Find circle with different color</li>
+</ul>
+</li>
+<li>Simulate mouse click on screen</li>
+<li>Similate the result on screen.</li>
+</ul>
+<p>Using function HoughCircles in openCV to detect array circles from image</p>
+<pre><code class="language-objective-c">+ (NSDictionary *)hack:(NSImage *)image {
+    cv::Mat src;
+    NSImageToMat(image, src);
+    
+    cv::Mat gray;
+    cv::cvtColor(src, gray, cv::COLOR_BGR2GRAY);
+    cv::medianBlur(gray, gray, 5);
+    std::vector&lt;cv::Vec3f&gt; circles;
+    HoughCircles(gray, circles, cv::HOUGH_GRADIENT, 1,
+                 src.rows/16,
+                 100, 70, 10, 300
+                 );
+    
+    cv::Point tempPoint;
+    NSMutableArray *arrPoints = [[NSMutableArray alloc] init];
+    
+    if(circles.size() &gt; 3) {
+        
+        std::vector&lt;cv::Vec3b&gt; vColors;
+
+        int tempRadius = circles[0][2];
+        for( size_t i = 0; i &lt; circles.size(); i++ )
+        {
+            cv::Vec3i c = circles[i];
+            int radius = c[2];
+            //NSLog(@&quot;%ld %d %d&quot;, i, tempRadius, radius);
+            
+            if(std::abs(tempRadius - radius) &lt; 5){
+                vColors.push_back(GetColorFromMat(src, c));
+                cv::Point center = cv::Point(c[0], c[1]);
+                cv::circle( src, center, radius-2, cv::Scalar(255,0,255), 2, cv::LINE_AA);
+            }
+        }
+        for( size_t i = 0; i &lt; vColors.size(); i++ ) {
+            cv::Vec3b color1 = vColors[i];
+            bool flag = true;
+            for( size_t j = 0; j &lt; vColors.size(); j++ ) {
+                cv::Vec3b color2 = vColors[j];
+                if(i!=j &amp;&amp; color1[0]==color2[0] &amp;&amp; color1[1]==color2[1] &amp;&amp; color1[2]==color2[2]) {
+                    flag = false;
+                }
+            }
+            if(flag){
+                cv::Vec3i c = circles[i];
+                tempPoint = cv::Point(c[0], c[1]);
+                cv::circle( src, tempPoint, 10, cv::Scalar(255,0,255), 4, cv::LINE_8);
+                NSLog(@&quot;%ld R: %d G:%d B:%d&quot;, i, color1[0], color1[1], color1[2]);
+                [arrPoints addObject: @{ @&quot;x&quot;: [NSNumber numberWithInt:tempPoint.x],
+                                         @&quot;y&quot;: [NSNumber numberWithInt:tempPoint.y]}];
+            }
+        }
+        if(arrPoints.count&gt;1){
+            NSLog(@&quot;xx: %ld&quot;, arrPoints.count);
+        }
+    }
+   
+    return @{
+        @&quot;image&quot;: MatToNSImage(src),
+        @&quot;points&quot;: arrPoints,
+    };
+}
+</code></pre>
+<p>Source code: <a href="https://github.com/chuongtrh/hack_lyto_different_color_osx">https://github.com/chuongtrh/hack_lyto_different_color_osx</a></p>
+<h3 id="thanks-for-reading-and-happy-sharing">Thanks for reading and happy sharing</h3>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">Archives</a>
+            </li>
+            
+            <li>
+                <a href="/resume.pdf">Resume</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/chuongtrh" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+            <li>
+                <a href="https://www.linkedin.com/in/chuongtrh" target="_blank"><span>Linkedin</span></a>
+            </li>
+            
+            <li>
+                <a href="https://stackoverflow.com/users/5589964/chuong-tran" target="_blank"><span>Stackoverflow</span></a>
+            </li>
+            
+            <li>
+                <a href="mailto:chuongtrh@gmail.com" target="_blank"><span>Email</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/bot/">bot</a>
+            </span>
+            
+            <span>
+                <a href="/tags/chrome/">chrome</a>
+            </span>
+            
+            <span>
+                <a href="/tags/cloud/">cloud</a>
+            </span>
+            
+            <span>
+                <a href="/tags/color/">color</a>
+            </span>
+            
+            <span>
+                <a href="/tags/cpq/">cpq</a>
+            </span>
+            
+            <span>
+                <a href="/tags/extenstion/">extenstion</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gcp/">gcp</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gif/">gif</a>
+            </span>
+            
+            <span>
+                <a href="/tags/golang/">golang</a>
+            </span>
+            
+            <span>
+                <a href="/tags/graph_database/">graph_database</a>
+            </span>
+            
+            <span>
+                <a href="/tags/handlebars/">handlebars</a>
+            </span>
+            
+            <span>
+                <a href="/tags/html/">html</a>
+            </span>
+            
+            <span>
+                <a href="/tags/index/">index</a>
+            </span>
+            
+            <span>
+                <a href="/tags/javascript/">javascript</a>
+            </span>
+            
+            <span>
+                <a href="/tags/mindmap/">mindmap</a>
+            </span>
+            
+            <span>
+                <a href="/tags/neo4j/">neo4j</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nestjs/">nestjs</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nodejs/">nodejs</a>
+            </span>
+            
+            <span>
+                <a href="/tags/opencv/">opencv</a>
+            </span>
+            
+            <span>
+                <a href="/tags/pdf/">pdf</a>
+            </span>
+            
+            <span>
+                <a href="/tags/pkg/">pkg</a>
+            </span>
+            
+            <span>
+                <a href="/tags/puppeteer/">puppeteer</a>
+            </span>
+            
+            <span>
+                <a href="/tags/request_lifecycle/">request_lifecycle</a>
+            </span>
+            
+            <span>
+                <a href="/tags/swift/">swift</a>
+            </span>
+            
+            <span>
+                <a href="/tags/tool/">tool</a>
+            </span>
+            
+            <span>
+                <a href="/tags/twilio/">twilio</a>
+            </span>
+            
+            <span>
+                <a href="/tags/visualize/">visualize</a>
+            </span>
+            
+            <span>
+                <a href="/tags/whatsapp/">whatsapp</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+    
+    
+</aside>
+        </div>
+        <div class="btn">
+    <div class="btn-menu" id="btn-menu">
+        <i class="iconfont icon-grid-sharp"></i>
+    </div>
+    <div class="btn-toggle-mode">
+        <i class="iconfont icon-contrast-sharp"></i>
+    </div>
+    <div class="btn-scroll-top">
+        <i class="iconfont icon-chevron-up-circle-sharp"></i>
+    </div>
+</div>
+<aside class="sidebar-mobile" style="display: none;">
+  <div class="sidebar-wrapper">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">Archives</a>
+            </li>
+            
+            <li>
+                <a href="/resume.pdf">Resume</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/chuongtrh" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+            <li>
+                <a href="https://www.linkedin.com/in/chuongtrh" target="_blank"><span>Linkedin</span></a>
+            </li>
+            
+            <li>
+                <a href="https://stackoverflow.com/users/5589964/chuong-tran" target="_blank"><span>Stackoverflow</span></a>
+            </li>
+            
+            <li>
+                <a href="mailto:chuongtrh@gmail.com" target="_blank"><span>Email</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/bot/">bot</a>
+            </span>
+            
+            <span>
+                <a href="/tags/chrome/">chrome</a>
+            </span>
+            
+            <span>
+                <a href="/tags/cloud/">cloud</a>
+            </span>
+            
+            <span>
+                <a href="/tags/color/">color</a>
+            </span>
+            
+            <span>
+                <a href="/tags/cpq/">cpq</a>
+            </span>
+            
+            <span>
+                <a href="/tags/extenstion/">extenstion</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gcp/">gcp</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gif/">gif</a>
+            </span>
+            
+            <span>
+                <a href="/tags/golang/">golang</a>
+            </span>
+            
+            <span>
+                <a href="/tags/graph_database/">graph_database</a>
+            </span>
+            
+            <span>
+                <a href="/tags/handlebars/">handlebars</a>
+            </span>
+            
+            <span>
+                <a href="/tags/html/">html</a>
+            </span>
+            
+            <span>
+                <a href="/tags/index/">index</a>
+            </span>
+            
+            <span>
+                <a href="/tags/javascript/">javascript</a>
+            </span>
+            
+            <span>
+                <a href="/tags/mindmap/">mindmap</a>
+            </span>
+            
+            <span>
+                <a href="/tags/neo4j/">neo4j</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nestjs/">nestjs</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nodejs/">nodejs</a>
+            </span>
+            
+            <span>
+                <a href="/tags/opencv/">opencv</a>
+            </span>
+            
+            <span>
+                <a href="/tags/pdf/">pdf</a>
+            </span>
+            
+            <span>
+                <a href="/tags/pkg/">pkg</a>
+            </span>
+            
+            <span>
+                <a href="/tags/puppeteer/">puppeteer</a>
+            </span>
+            
+            <span>
+                <a href="/tags/request_lifecycle/">request_lifecycle</a>
+            </span>
+            
+            <span>
+                <a href="/tags/swift/">swift</a>
+            </span>
+            
+            <span>
+                <a href="/tags/tool/">tool</a>
+            </span>
+            
+            <span>
+                <a href="/tags/twilio/">twilio</a>
+            </span>
+            
+            <span>
+                <a href="/tags/visualize/">visualize</a>
+            </span>
+            
+            <span>
+                <a href="/tags/whatsapp/">whatsapp</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+    
+    
+  </div>
+</aside>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            
+            <span>&copy; 2019-2020
+                <a href="https://chuongtrh.github.io">Chuong Tran</a>
+                 | <a href="https://github.com/chuongtrh">Source code</a> 
+                | Powered by <a href="https://github.com/amzrk2/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
+                                                    target="_blank">Hugo</a> 
+            </span>
+        </div>
+    </div>
+</footer>
+
+    
+<script defer src="https://cdn.jsdelivr.net/combine/npm/medium-zoom@1.0.6,npm/lazysizes@5.2.2"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/components/prism-core.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+
+<script defer src="/assets/js/fuji.min.js"></script>
+
+
+</body>
+
+</html>

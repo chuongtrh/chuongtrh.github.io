@@ -13,10 +13,10 @@
     
     <item>
       <title>Request Lifecycle in Nestjs</title>
-      <link>https://chuongtrh.github.io/blog/request-lifecycle-in-nestjs/</link>
+      <link>https://chuongtrh.github.io/post/request-lifecycle-in-nestjs/</link>
       <pubDate>Thu, 23 Jul 2020 22:51:52 +0700</pubDate>
       
-      <guid>https://chuongtrh.github.io/blog/request-lifecycle-in-nestjs/</guid>
+      <guid>https://chuongtrh.github.io/post/request-lifecycle-in-nestjs/</guid>
       <description>Nest applications handle requests and produce responses in a sequence we refer to as the request lifecycle.</description>
     </item>
     

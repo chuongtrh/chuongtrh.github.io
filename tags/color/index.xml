@@ -13,20 +13,20 @@
     
     <item>
       <title>Generate Palette From Image</title>
-      <link>https://chuongtrh.github.io/blog/generate-palette-from-image/</link>
+      <link>https://chuongtrh.github.io/post/palette-from-image/</link>
       <pubDate>Thu, 30 Jul 2020 22:41:13 +0700</pubDate>
       
-      <guid>https://chuongtrh.github.io/blog/generate-palette-from-image/</guid>
+      <guid>https://chuongtrh.github.io/post/palette-from-image/</guid>
       <description>Inspire from EarthView from Google.
 Using 3rd party ColorThiefSwift to generate palette.</description>
     </item>
     
     <item>
       <title>PixColor iOS</title>
-      <link>https://chuongtrh.github.io/blog/pixcolor-ios/</link>
+      <link>https://chuongtrh.github.io/post/pixcolor_ios/</link>
       <pubDate>Thu, 30 Jul 2020 22:35:25 +0700</pubDate>
       
-      <guid>https://chuongtrh.github.io/blog/pixcolor-ios/</guid>
+      <guid>https://chuongtrh.github.io/post/pixcolor_ios/</guid>
       <description>Generate palette color from image
 Features  Explore image from unsplash.</description>
     </item>

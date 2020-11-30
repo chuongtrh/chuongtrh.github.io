@@ -13,40 +13,40 @@
     
     <item>
       <title>Generate Palette From Image</title>
-      <link>https://chuongtrh.github.io/blog/generate-palette-from-image/</link>
+      <link>https://chuongtrh.github.io/post/palette-from-image/</link>
       <pubDate>Thu, 30 Jul 2020 22:41:13 +0700</pubDate>
       
-      <guid>https://chuongtrh.github.io/blog/generate-palette-from-image/</guid>
+      <guid>https://chuongtrh.github.io/post/palette-from-image/</guid>
       <description>Inspire from EarthView from Google.
 Using 3rd party ColorThiefSwift to generate palette.</description>
     </item>
     
     <item>
       <title>PixColor iOS</title>
-      <link>https://chuongtrh.github.io/blog/pixcolor-ios/</link>
+      <link>https://chuongtrh.github.io/post/pixcolor_ios/</link>
       <pubDate>Thu, 30 Jul 2020 22:35:25 +0700</pubDate>
       
-      <guid>https://chuongtrh.github.io/blog/pixcolor-ios/</guid>
+      <guid>https://chuongtrh.github.io/post/pixcolor_ios/</guid>
       <description>Generate palette color from image
 Features  Explore image from unsplash.</description>
     </item>
     
     <item>
       <title>Trick convert gif to gif3d</title>
-      <link>https://chuongtrh.github.io/blog/trick-convert-gif-to-gif3d/</link>
+      <link>https://chuongtrh.github.io/post/convert_gif_to_gif3d/</link>
       <pubDate>Thu, 30 Jul 2020 10:30:26 +0700</pubDate>
       
-      <guid>https://chuongtrh.github.io/blog/trick-convert-gif-to-gif3d/</guid>
+      <guid>https://chuongtrh.github.io/post/convert_gif_to_gif3d/</guid>
       <description>Trick convert gif to gif3d using Swift
 Features  Simple way to convert gif to gif3d Change background Change size eraser tool  How to work  Add a layer with two white line on top every frame from orignal gif Try to eraser white line to fix with your gif Combine layers and convert to gif  Screenshots Before</description>
     </item>
     
     <item>
       <title>Using OpenCV to hack game Lyto Different Color on OSX</title>
-      <link>https://chuongtrh.github.io/blog/using-opencv-to-hack-game-lyto-different-color-on-osx/</link>
+      <link>https://chuongtrh.github.io/post/hack_lyto_different_color_osx/</link>
       <pubDate>Sat, 25 Jul 2020 10:16:37 +0700</pubDate>
       
-      <guid>https://chuongtrh.github.io/blog/using-opencv-to-hack-game-lyto-different-color-on-osx/</guid>
+      <guid>https://chuongtrh.github.io/post/hack_lyto_different_color_osx/</guid>
       <description>Using OpenCV to hack game Lyto different color on OSX.</description>
     </item>
     

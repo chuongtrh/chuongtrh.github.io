@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.74.2" />
+
+
+<link rel="ChuongTran's blog" href="/favicons/favicon.ico" />
+
+
+<title>Generate a simple PDF from HTML - Chuong Tran&#39;s blogs</title>
+
+
+<meta name="author" content="Chuong Tran" />
+
+
+<meta name="description" content="Generate a simple PDF from HTML" />
+
+
+<meta name="keywords" content="html, pdf, puppeteer, handlebars" />
+
+<meta property="og:title" content="Generate a simple PDF from HTML" />
+<meta property="og:description" content="Generate a simple PDF from HTML" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chuongtrh.github.io/post/html_to_pdf/" />
+<meta property="og:image" content="https://chuongtrh.github.io/images/profile.jpg"/>
+<meta property="article:published_time" content="2020-07-22T21:11:56+07:00" />
+<meta property="article:modified_time" content="2020-07-22T21:11:56+07:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://chuongtrh.github.io/images/profile.jpg"/>
+
+<meta name="twitter:title" content="Generate a simple PDF from HTML"/>
+<meta name="twitter:description" content="Generate a simple PDF from HTML"/>
+
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+
+<link rel="stylesheet" href="https://chuongtrh.github.io/assets/css/fuji.min.css" />
+
+
+
+
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-81667452-3');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-81667452-3"></script>
+
+
+</head>
+
+<body data-theme="auto">
+    <script data-cfasync="false">
+  
+  var fujiThemeData = localStorage.getItem('fuji_data-theme');
+  
+  if (!fujiThemeData) {
+    localStorage.setItem('fuji_data-theme', 'auto');
+  } else {
+    
+    if (fujiThemeData !== 'auto') {
+      document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+    }
+  }
+</script>
+
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="https://chuongtrh.github.io">Chuong Tran&#39;s blogs</a>
+            
+            <span class="title-sub">Stay hungry stay foolish</span>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://chuongtrh.github.io/post/html_to_pdf/">Generate a simple PDF from HTML</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-07-22</span><span><i class="iconfont icon-time-sharp"></i>&nbsp;2 minutes</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/html">html</a>&nbsp;<a href="/tags/pdf">pdf</a>&nbsp;<a href="/tags/puppeteer">puppeteer</a>&nbsp;<a href="/tags/handlebars">handlebars</a>&nbsp;</span>
+
+    </div>
+    
+    
+    <div class="post-content markdown-body">
+        <p>Generate a simple PDF invoice from HTML using <a href="https://github.com/GoogleChrome/puppeteer" target="_blank">puppeteer</a> &amp; <a href="http://handlebarsjs.com/" target="_blank">handlebars</a>.</p>
+<p><img class="img-zoomable" src="https://raw.githubusercontent.com/chuongtrh/html_to_pdf/master/screenshot/invoice.png" alt="Invoice" />
+</p>
+<h2 id="introduce">Introduce</h2>
+<ul>
+<li><a href="https://github.com/GoogleChrome/puppeteer" target="_blank">Puppeteer</a></li>
+</ul>
+<blockquote>
+<p>Puppeteer is Node.js library giving you access to a headless Chrome browser. This makes it a breeze to generate PDF files with Node.js</p>
+</blockquote>
+<ul>
+<li><a href="http://handlebarsjs.com/" target="_blank">Handlebars</a></li>
+</ul>
+<blockquote>
+<p>Handlebars provides the power necessary to let you build semantic templates effectively with no frustration</p>
+</blockquote>
+<h2 id="how-to-use">How to use</h2>
+<ul>
+<li>Run <code>npm install</code> to install package in package.json</li>
+<li>Run <code>node pdf.js</code> to generate invoice.pdf</li>
+</ul>
+<h2 id="generate-invoice">Generate invoice</h2>
+<ol>
+<li>Prepare content html (invoice.html)</li>
+<li>Using handlebars to binding data to content html</li>
+<li>Using Puppeteer to generate pdf from final html</li>
+</ol>
+<pre><code class="language-js">const fs = require(&quot;fs&quot;);
+const path = require(&quot;path&quot;);
+const puppeteer = require('puppeteer');
+const handlebars = require(&quot;handlebars&quot;);
+
+(async () =&gt; {
+
+    var dataBinding = {
+        items: [{
+                name: &quot;item 1&quot;,
+                price: 100
+            },
+            {
+                name: &quot;item 2&quot;,
+                price: 200
+            },
+            {
+                name: &quot;item 3&quot;,
+                price: 300
+            }
+        ],
+        total: 600,
+        isWatermark: false
+    }
+    
+    var templateHtml = fs.readFileSync(path.join(process.cwd(), 'invoice.html'), 'utf8');
+    var template = handlebars.compile(templateHtml);
+    var finalHtml = template(dataBinding);
+    var options = {
+        format: 'A4',
+        headerTemplate: &quot;&lt;p&gt;&lt;/p&gt;&quot;,
+        footerTemplate: &quot;&lt;p&gt;&lt;/p&gt;&quot;,
+        displayHeaderFooter: false,
+        margin: {
+            top: &quot;40px&quot;,
+            bottom: &quot;100px&quot;
+        },
+        printBackground: true,
+        path: 'invoice.pdf'
+    }
+
+    const browser = await puppeteer.launch({
+        args: ['--no-sandbox'],
+        headless: true
+    });
+    const page = await browser.newPage();
+    await page.goto(`data: text/html,${finalHtml}`, {
+        waitUntil: 'networkidle0'
+    });
+    await page.pdf(options);
+    await browser.close();
+})();
+</code></pre>
+<h2 id="how-to-display-paid-stamp-watermark-on-the-invoice">How to display paid stamp watermark on the invoice?</h2>
+<p>Using handlebars to check param <code>isWatermark</code></p>
+<pre><code class="language-js">  {{#if isWatermark}}
+    &lt;div style=&quot;border-width: 6px;border-style: solid; border-color: #008000;border-radius: 8px; color: #008000; opacity:0.6; position: absolute; z-index: 1; left:40%; top:30%; font-size: 60pt;-webkit-transform: rotate(-45deg);-ms-transform: rotate(-45deg);transform: rotate(-45deg); font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;&quot;&gt;
+        PAID &lt;/div&gt;
+    {{/if}}
+</code></pre>
+<p>Change <code>isWatermark: true</code> and run <code>node pdf.js</code> again</p>
+<p><img class="img-zoomable" src="https://raw.githubusercontent.com/chuongtrh/html_to_pdf/master/screenshot/invoice_paid.png" alt="Invoice with stamp paid watermark" />
+</p>
+<p>You can find the source code at <a href="https://github.com/chuongtrh/html_to_pdf" target="_blank">Github</a></p>
+<h5 id="thanks-for-reading-and-happy-sharing">Thanks for reading and happy sharing</h5>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">Archives</a>
+            </li>
+            
+            <li>
+                <a href="/resume.pdf">Resume</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/chuongtrh" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+            <li>
+                <a href="https://www.linkedin.com/in/chuongtrh" target="_blank"><span>Linkedin</span></a>
+            </li>
+            
+            <li>
+                <a href="https://stackoverflow.com/users/5589964/chuong-tran" target="_blank"><span>Stackoverflow</span></a>
+            </li>
+            
+            <li>
+                <a href="mailto:chuongtrh@gmail.com" target="_blank"><span>Email</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/bot/">bot</a>
+            </span>
+            
+            <span>
+                <a href="/tags/chrome/">chrome</a>
+            </span>
+            
+            <span>
+                <a href="/tags/cloud/">cloud</a>
+            </span>
+            
+            <span>
+                <a href="/tags/color/">color</a>
+            </span>
+            
+            <span>
+                <a href="/tags/cpq/">cpq</a>
+            </span>
+            
+            <span>
+                <a href="/tags/extenstion/">extenstion</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gcp/">gcp</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gif/">gif</a>
+            </span>
+            
+            <span>
+                <a href="/tags/golang/">golang</a>
+            </span>
+            
+            <span>
+                <a href="/tags/graph_database/">graph_database</a>
+            </span>
+            
+            <span>
+                <a href="/tags/handlebars/">handlebars</a>
+            </span>
+            
+            <span>
+                <a href="/tags/html/">html</a>
+            </span>
+            
+            <span>
+                <a href="/tags/index/">index</a>
+            </span>
+            
+            <span>
+                <a href="/tags/javascript/">javascript</a>
+            </span>
+            
+            <span>
+                <a href="/tags/mindmap/">mindmap</a>
+            </span>
+            
+            <span>
+                <a href="/tags/neo4j/">neo4j</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nestjs/">nestjs</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nodejs/">nodejs</a>
+            </span>
+            
+            <span>
+                <a href="/tags/opencv/">opencv</a>
+            </span>
+            
+            <span>
+                <a href="/tags/pdf/">pdf</a>
+            </span>
+            
+            <span>
+                <a href="/tags/pkg/">pkg</a>
+            </span>
+            
+            <span>
+                <a href="/tags/puppeteer/">puppeteer</a>
+            </span>
+            
+            <span>
+                <a href="/tags/request_lifecycle/">request_lifecycle</a>
+            </span>
+            
+            <span>
+                <a href="/tags/swift/">swift</a>
+            </span>
+            
+            <span>
+                <a href="/tags/tool/">tool</a>
+            </span>
+            
+            <span>
+                <a href="/tags/twilio/">twilio</a>
+            </span>
+            
+            <span>
+                <a href="/tags/visualize/">visualize</a>
+            </span>
+            
+            <span>
+                <a href="/tags/whatsapp/">whatsapp</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+    
+    
+</aside>
+        </div>
+        <div class="btn">
+    <div class="btn-menu" id="btn-menu">
+        <i class="iconfont icon-grid-sharp"></i>
+    </div>
+    <div class="btn-toggle-mode">
+        <i class="iconfont icon-contrast-sharp"></i>
+    </div>
+    <div class="btn-scroll-top">
+        <i class="iconfont icon-chevron-up-circle-sharp"></i>
+    </div>
+</div>
+<aside class="sidebar-mobile" style="display: none;">
+  <div class="sidebar-wrapper">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">Archives</a>
+            </li>
+            
+            <li>
+                <a href="/resume.pdf">Resume</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/chuongtrh" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+            <li>
+                <a href="https://www.linkedin.com/in/chuongtrh" target="_blank"><span>Linkedin</span></a>
+            </li>
+            
+            <li>
+                <a href="https://stackoverflow.com/users/5589964/chuong-tran" target="_blank"><span>Stackoverflow</span></a>
+            </li>
+            
+            <li>
+                <a href="mailto:chuongtrh@gmail.com" target="_blank"><span>Email</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/bot/">bot</a>
+            </span>
+            
+            <span>
+                <a href="/tags/chrome/">chrome</a>
+            </span>
+            
+            <span>
+                <a href="/tags/cloud/">cloud</a>
+            </span>
+            
+            <span>
+                <a href="/tags/color/">color</a>
+            </span>
+            
+            <span>
+                <a href="/tags/cpq/">cpq</a>
+            </span>
+            
+            <span>
+                <a href="/tags/extenstion/">extenstion</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gcp/">gcp</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gif/">gif</a>
+            </span>
+            
+            <span>
+                <a href="/tags/golang/">golang</a>
+            </span>
+            
+            <span>
+                <a href="/tags/graph_database/">graph_database</a>
+            </span>
+            
+            <span>
+                <a href="/tags/handlebars/">handlebars</a>
+            </span>
+            
+            <span>
+                <a href="/tags/html/">html</a>
+            </span>
+            
+            <span>
+                <a href="/tags/index/">index</a>
+            </span>
+            
+            <span>
+                <a href="/tags/javascript/">javascript</a>
+            </span>
+            
+            <span>
+                <a href="/tags/mindmap/">mindmap</a>
+            </span>
+            
+            <span>
+                <a href="/tags/neo4j/">neo4j</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nestjs/">nestjs</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nodejs/">nodejs</a>
+            </span>
+            
+            <span>
+                <a href="/tags/opencv/">opencv</a>
+            </span>
+            
+            <span>
+                <a href="/tags/pdf/">pdf</a>
+            </span>
+            
+            <span>
+                <a href="/tags/pkg/">pkg</a>
+            </span>
+            
+            <span>
+                <a href="/tags/puppeteer/">puppeteer</a>
+            </span>
+            
+            <span>
+                <a href="/tags/request_lifecycle/">request_lifecycle</a>
+            </span>
+            
+            <span>
+                <a href="/tags/swift/">swift</a>
+            </span>
+            
+            <span>
+                <a href="/tags/tool/">tool</a>
+            </span>
+            
+            <span>
+                <a href="/tags/twilio/">twilio</a>
+            </span>
+            
+            <span>
+                <a href="/tags/visualize/">visualize</a>
+            </span>
+            
+            <span>
+                <a href="/tags/whatsapp/">whatsapp</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+    
+    
+  </div>
+</aside>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            
+            <span>&copy; 2019-2020
+                <a href="https://chuongtrh.github.io">Chuong Tran</a>
+                 | <a href="https://github.com/chuongtrh">Source code</a> 
+                | Powered by <a href="https://github.com/amzrk2/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
+                                                    target="_blank">Hugo</a> 
+            </span>
+        </div>
+    </div>
+</footer>
+
+    
+<script defer src="https://cdn.jsdelivr.net/combine/npm/medium-zoom@1.0.6,npm/lazysizes@5.2.2"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/components/prism-core.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+
+<script defer src="/assets/js/fuji.min.js"></script>
+
+
+</body>
+
+</html>

@@ -1,1 +1,3 @@
 User-agent: *
+
+Sitemap: https://chuongtrh.github.io/sitemap.xml

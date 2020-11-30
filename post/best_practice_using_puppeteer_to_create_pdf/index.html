@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.74.2" />
+
+
+<link rel="ChuongTran's blog" href="/favicons/favicon.ico" />
+
+
+<title>Best practice using puppeteer to create PDF - Chuong Tran&#39;s blogs</title>
+
+
+<meta name="author" content="Chuong Tran" />
+
+
+<meta name="description" content="Best practice using puppeteer to create PDF" />
+
+
+<meta name="keywords" content="puppeteer, html, pdf" />
+
+<meta property="og:title" content="Best practice using puppeteer to create PDF" />
+<meta property="og:description" content="Best practice using puppeteer to create PDF" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chuongtrh.github.io/post/best_practice_using_puppeteer_to_create_pdf/" />
+<meta property="og:image" content="https://chuongtrh.github.io/images/profile.jpg"/>
+<meta property="article:published_time" content="2020-07-26T08:56:22+07:00" />
+<meta property="article:modified_time" content="2020-07-26T08:56:22+07:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://chuongtrh.github.io/images/profile.jpg"/>
+
+<meta name="twitter:title" content="Best practice using puppeteer to create PDF"/>
+<meta name="twitter:description" content="Best practice using puppeteer to create PDF"/>
+
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+
+<link rel="stylesheet" href="https://chuongtrh.github.io/assets/css/fuji.min.css" />
+
+
+
+
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-81667452-3');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-81667452-3"></script>
+
+
+</head>
+
+<body data-theme="auto">
+    <script data-cfasync="false">
+  
+  var fujiThemeData = localStorage.getItem('fuji_data-theme');
+  
+  if (!fujiThemeData) {
+    localStorage.setItem('fuji_data-theme', 'auto');
+  } else {
+    
+    if (fujiThemeData !== 'auto') {
+      document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+    }
+  }
+</script>
+
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="https://chuongtrh.github.io">Chuong Tran&#39;s blogs</a>
+            
+            <span class="title-sub">Stay hungry stay foolish</span>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://chuongtrh.github.io/post/best_practice_using_puppeteer_to_create_pdf/">Best practice using puppeteer to create PDF</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-07-26</span><span><i class="iconfont icon-time-sharp"></i>&nbsp;3 minutes</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/puppeteer">puppeteer</a>&nbsp;<a href="/tags/html">html</a>&nbsp;<a href="/tags/pdf">pdf</a>&nbsp;</span>
+
+    </div>
+    
+    
+    <div class="post-content markdown-body">
+        <p>Which puppeteer we can easy to create PDF from HTML. You can find a previous post at there. <a href="https://chuongtrh.github.io/blog/generate-a-simple-pdf-from-html" target="_blank">How to generate PDF from HTML?</a></p>
+<h2 id="which-is-the-best-practice-using-puppeteer-to-create-pdf">Which is the best practice using puppeteer to create pdf?</h2>
+<p><img class="img-zoomable" src="https://meme.xyz/uploads/posts/t/l-21435-do-you-know-the-way.jpg" alt="" />
+</p>
+<p>Here are two approach using puppeteer.</p>
+<ol>
+<li>Always launch puppeteer and create a new browser to create pdf. The browser will be closed when created pdf is done.</li>
+</ol>
+<pre><code class="language-js">(async () =&gt; {
+  const finalHtml = 'html content...';
+  const browser = await puppeteer.launch();
+  const page = await browser.pages()[0];
+  await page.setContent(finalHtml);
+  await page.pdf({path: 'hn.pdf', format: 'A4'});
+
+  await browser.close();
+})();
+</code></pre>
+<ol start="2">
+<li>Keep 1 instance browser. Always create a new page to create pdf. The page will be closed when created pdf is done.</li>
+</ol>
+<pre><code class="language-js">const browser = await puppeteer.launch();
+
+(async () =&gt; {
+  const finalHtml = 'html content...';
+  const page = await browser.newPage();
+  await page.setContent(finalHtml);
+  await page.pdf({path: 'hn.pdf', format: 'A4'});
+  await page.close();
+})();
+</code></pre>
+<h2 id="solution">Solution</h2>
+<ol>
+<li><strong>Short Lived Browser (Opening new browser instance every time)</strong></li>
+</ol>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>A new session opens each time, one instance doesn&rsquo;t interfere with another.</li>
+<li>Perfect for testing multiple credentials over same/multiple websites.</li>
+<li>Can use instance wide proxy.</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>You cannot share data between two instance easily (unless you use <em>userDataDir</em> or <em>cookies</em>).</li>
+<li>Takes more time to open.</li>
+</ul>
+<ol start="2">
+<li><strong>Long Lived Browser (Sharing same browser instance every time)</strong></li>
+</ol>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>Opening a new tab takes way less time than opening a new chrome with empty profile.</li>
+<li>Data is shared between two instance easily. Perfect for scraping/testing same website with same credentials.</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>You won&rsquo;t be able to use authentication and cookies on same website using different credentials.</li>
+<li>Cannot use instance wide proxy (at this moment).</li>
+</ul>
+<h2 id="benchmark">Benchmark</h2>
+<p>Here is a benchmark for running only 100 times.
+The code to run:</p>
+<pre><code class="language-js">const bench = require(&quot;@entrptaher/async-bench&quot;);
+const puppeteer = require(&quot;puppeteer&quot;);
+
+const createNewBrowser = async function() {
+  const finalHtml = &quot;html content...&quot;;
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.setContent(finalHtml);
+  await page.pdf({ path: &quot;hn_shortlived.pdf&quot;, format: &quot;A4&quot; });
+  await browser.close();
+  return true;
+};
+
+let longLivedBrowser;
+const useExisting = async function() {
+  const finalHtml = &quot;html content...&quot;;
+  if (!longLivedBrowser) {
+    longLivedBrowser = await puppeteer.launch();
+  }
+  const page = await longLivedBrowser.newPage();
+  await page.setContent(finalHtml);
+  await page.pdf({ path: &quot;hn_longlived.pdf&quot;, format: &quot;A4&quot; });
+  await page.close();
+  return true
+};
+
+let longLivedNoNewTab;
+const useExitingTab = async function() {
+  const finalHtml = &quot;html content...&quot;;
+  if (!longLivedNoNewTab) {
+    longLivedNoNewTab = await puppeteer.launch();
+  }
+  const page = (await longLivedNoNewTab.pages())[0];
+  await page.setContent(finalHtml);
+  await page.pdf({ path: &quot;hn_longlived.pdf&quot;, format: &quot;A4&quot; });
+  return true
+};
+
+const times = 100;
+
+Promise.all([
+  bench(createNewBrowser, times),
+  bench(useExisting, times),
+  bench(useExitingTab, times)
+]).then(console.log);
+</code></pre>
+<p>The result:</p>
+<pre><code class="language-js">[ { meanExecTime: 277.3644104500115,
+    execTime: 27736.44104500115,
+    resultOfMethod: true },
+  { meanExecTime: 36.89182792000472,
+    execTime: 3689.1827920004725,
+    resultOfMethod: true },
+  { meanExecTime: 11.07780257999897,
+    execTime: 1107.780257999897,
+    resultOfMethod: true } ]
+</code></pre>
+<p>Each has following:</p>
+<ul>
+<li><em>meanExecTime</em>: Average time to run</li>
+<li><em>execTime</em>: Total time to run</li>
+<li><em>resultOfMethod</em>: Just some result for identification</li>
+</ul>
+<p>The benchmark is incomplete because it doesn&rsquo;t have the machine details etc. But it definitely shows that opening browser each time will result in more time, even if it&rsquo;s only 100 times.</p>
+<p>On second function, you will also notice opening a new tab takes time, so on third function if you don&rsquo;t close the page, it will take even less time.</p>
+<h2 id="summary">Summary</h2>
+<ul>
+<li>If you need performance (11ms compared to 277ms), don&rsquo;t care about session, go for existing tab.</li>
+<li>If you want to run multiple test on same window in parallel, go for new tab.</li>
+<li>If you need sessions and persistence, go for new browser instance.</li>
+</ul>
+<p>More detail at this <a href="https://stackoverflow.com/questions/54965045/which-is-the-best-practice-using-puppeteer-to-create-pdf" target="_blank">post</a> on Stackoverflow.</p>
+<p>Thanks <strong>@Md. Abu Taher</strong> answer on my post.</p>
+<h5 id="thanks-for-reading-and-happy-sharing">Thanks for reading and happy sharing</h5>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">Archives</a>
+            </li>
+            
+            <li>
+                <a href="/resume.pdf">Resume</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/chuongtrh" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+            <li>
+                <a href="https://www.linkedin.com/in/chuongtrh" target="_blank"><span>Linkedin</span></a>
+            </li>
+            
+            <li>
+                <a href="https://stackoverflow.com/users/5589964/chuong-tran" target="_blank"><span>Stackoverflow</span></a>
+            </li>
+            
+            <li>
+                <a href="mailto:chuongtrh@gmail.com" target="_blank"><span>Email</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/bot/">bot</a>
+            </span>
+            
+            <span>
+                <a href="/tags/chrome/">chrome</a>
+            </span>
+            
+            <span>
+                <a href="/tags/cloud/">cloud</a>
+            </span>
+            
+            <span>
+                <a href="/tags/color/">color</a>
+            </span>
+            
+            <span>
+                <a href="/tags/cpq/">cpq</a>
+            </span>
+            
+            <span>
+                <a href="/tags/extenstion/">extenstion</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gcp/">gcp</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gif/">gif</a>
+            </span>
+            
+            <span>
+                <a href="/tags/golang/">golang</a>
+            </span>
+            
+            <span>
+                <a href="/tags/graph_database/">graph_database</a>
+            </span>
+            
+            <span>
+                <a href="/tags/handlebars/">handlebars</a>
+            </span>
+            
+            <span>
+                <a href="/tags/html/">html</a>
+            </span>
+            
+            <span>
+                <a href="/tags/index/">index</a>
+            </span>
+            
+            <span>
+                <a href="/tags/javascript/">javascript</a>
+            </span>
+            
+            <span>
+                <a href="/tags/mindmap/">mindmap</a>
+            </span>
+            
+            <span>
+                <a href="/tags/neo4j/">neo4j</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nestjs/">nestjs</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nodejs/">nodejs</a>
+            </span>
+            
+            <span>
+                <a href="/tags/opencv/">opencv</a>
+            </span>
+            
+            <span>
+                <a href="/tags/pdf/">pdf</a>
+            </span>
+            
+            <span>
+                <a href="/tags/pkg/">pkg</a>
+            </span>
+            
+            <span>
+                <a href="/tags/puppeteer/">puppeteer</a>
+            </span>
+            
+            <span>
+                <a href="/tags/request_lifecycle/">request_lifecycle</a>
+            </span>
+            
+            <span>
+                <a href="/tags/swift/">swift</a>
+            </span>
+            
+            <span>
+                <a href="/tags/tool/">tool</a>
+            </span>
+            
+            <span>
+                <a href="/tags/twilio/">twilio</a>
+            </span>
+            
+            <span>
+                <a href="/tags/visualize/">visualize</a>
+            </span>
+            
+            <span>
+                <a href="/tags/whatsapp/">whatsapp</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+    
+    
+</aside>
+        </div>
+        <div class="btn">
+    <div class="btn-menu" id="btn-menu">
+        <i class="iconfont icon-grid-sharp"></i>
+    </div>
+    <div class="btn-toggle-mode">
+        <i class="iconfont icon-contrast-sharp"></i>
+    </div>
+    <div class="btn-scroll-top">
+        <i class="iconfont icon-chevron-up-circle-sharp"></i>
+    </div>
+</div>
+<aside class="sidebar-mobile" style="display: none;">
+  <div class="sidebar-wrapper">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">Archives</a>
+            </li>
+            
+            <li>
+                <a href="/resume.pdf">Resume</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/chuongtrh" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+            <li>
+                <a href="https://www.linkedin.com/in/chuongtrh" target="_blank"><span>Linkedin</span></a>
+            </li>
+            
+            <li>
+                <a href="https://stackoverflow.com/users/5589964/chuong-tran" target="_blank"><span>Stackoverflow</span></a>
+            </li>
+            
+            <li>
+                <a href="mailto:chuongtrh@gmail.com" target="_blank"><span>Email</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/bot/">bot</a>
+            </span>
+            
+            <span>
+                <a href="/tags/chrome/">chrome</a>
+            </span>
+            
+            <span>
+                <a href="/tags/cloud/">cloud</a>
+            </span>
+            
+            <span>
+                <a href="/tags/color/">color</a>
+            </span>
+            
+            <span>
+                <a href="/tags/cpq/">cpq</a>
+            </span>
+            
+            <span>
+                <a href="/tags/extenstion/">extenstion</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gcp/">gcp</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gif/">gif</a>
+            </span>
+            
+            <span>
+                <a href="/tags/golang/">golang</a>
+            </span>
+            
+            <span>
+                <a href="/tags/graph_database/">graph_database</a>
+            </span>
+            
+            <span>
+                <a href="/tags/handlebars/">handlebars</a>
+            </span>
+            
+            <span>
+                <a href="/tags/html/">html</a>
+            </span>
+            
+            <span>
+                <a href="/tags/index/">index</a>
+            </span>
+            
+            <span>
+                <a href="/tags/javascript/">javascript</a>
+            </span>
+            
+            <span>
+                <a href="/tags/mindmap/">mindmap</a>
+            </span>
+            
+            <span>
+                <a href="/tags/neo4j/">neo4j</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nestjs/">nestjs</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nodejs/">nodejs</a>
+            </span>
+            
+            <span>
+                <a href="/tags/opencv/">opencv</a>
+            </span>
+            
+            <span>
+                <a href="/tags/pdf/">pdf</a>
+            </span>
+            
+            <span>
+                <a href="/tags/pkg/">pkg</a>
+            </span>
+            
+            <span>
+                <a href="/tags/puppeteer/">puppeteer</a>
+            </span>
+            
+            <span>
+                <a href="/tags/request_lifecycle/">request_lifecycle</a>
+            </span>
+            
+            <span>
+                <a href="/tags/swift/">swift</a>
+            </span>
+            
+            <span>
+                <a href="/tags/tool/">tool</a>
+            </span>
+            
+            <span>
+                <a href="/tags/twilio/">twilio</a>
+            </span>
+            
+            <span>
+                <a href="/tags/visualize/">visualize</a>
+            </span>
+            
+            <span>
+                <a href="/tags/whatsapp/">whatsapp</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+    
+    
+  </div>
+</aside>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            
+            <span>&copy; 2019-2020
+                <a href="https://chuongtrh.github.io">Chuong Tran</a>
+                 | <a href="https://github.com/chuongtrh">Source code</a> 
+                | Powered by <a href="https://github.com/amzrk2/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
+                                                    target="_blank">Hugo</a> 
+            </span>
+        </div>
+    </div>
+</footer>
+
+    
+<script defer src="https://cdn.jsdelivr.net/combine/npm/medium-zoom@1.0.6,npm/lazysizes@5.2.2"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/components/prism-core.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+
+<script defer src="/assets/js/fuji.min.js"></script>
+
+
+</body>
+
+</html>

@@ -13,10 +13,10 @@
     
     <item>
       <title>Mindmap about GCP</title>
-      <link>https://chuongtrh.github.io/blog/mindmap-about-gcp/</link>
+      <link>https://chuongtrh.github.io/post/mindmap-gcp/</link>
       <pubDate>Wed, 22 Jul 2020 23:18:42 +0700</pubDate>
       
-      <guid>https://chuongtrh.github.io/blog/mindmap-about-gcp/</guid>
+      <guid>https://chuongtrh.github.io/post/mindmap-gcp/</guid>
       <description>The mindmap about Google Cloud Platform (GCP).
   Overview GCP   Cloud Function   Cloud Run   Database   Storage   </description>
     </item>
