@@ -20,5 +20,42 @@
       <description>This is a series about Javascript and Node.js. Reference from many sources and websites.</description>
     </item>
     
+    <item>
+      <title>Build Whatsapp Bot using Twilio</title>
+      <link>https://chuongtrh.github.io/post/bot-twilio-whatsapp/</link>
+      <pubDate>Thu, 30 Jul 2020 22:58:21 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/post/bot-twilio-whatsapp/</guid>
+      <description>Using Twilio API for WhatsApp to build a bot.
+Features:  /wiki using duckduckgo /unsplash using unsplash /loremflickr using loremflickr /chart using quickchart  Screenshots How to use  Install the dependencies  $ npm install   Create file .</description>
+    </item>
+    
+    <item>
+      <title>Best practice using puppeteer to create PDF</title>
+      <link>https://chuongtrh.github.io/post/best_practice_using_puppeteer_to_create_pdf/</link>
+      <pubDate>Sun, 26 Jul 2020 08:56:22 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/post/best_practice_using_puppeteer_to_create_pdf/</guid>
+      <description>Which puppeteer we can easy to create PDF from HTML. You can find a previous post at there.</description>
+    </item>
+    
+    <item>
+      <title>Improve Performance Generate Pdf Using Pupppeteer</title>
+      <link>https://chuongtrh.github.io/post/improve-performance-generate-pdf-using-pupppeteer/</link>
+      <pubDate>Wed, 22 Jul 2020 22:20:53 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/post/improve-performance-generate-pdf-using-pupppeteer/</guid>
+      <description>How to generate a pdf using puppeteer? Check out at there.</description>
+    </item>
+    
+    <item>
+      <title>Generate a simple PDF from HTML</title>
+      <link>https://chuongtrh.github.io/post/html_to_pdf/</link>
+      <pubDate>Wed, 22 Jul 2020 21:11:56 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/post/html_to_pdf/</guid>
+      <description>Generate a simple PDF invoice from HTML using puppeteer &amp;amp; handlebars.</description>
+    </item>
+    
   </channel>
 </rss>

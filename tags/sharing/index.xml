@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sharing on Chuong Tran&#39;s blogs</title>
+    <link>https://chuongtrh.github.io/tags/sharing/</link>
+    <description>Recent content in sharing on Chuong Tran&#39;s blogs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 26 Jul 2020 08:56:22 +0700</lastBuildDate>
+    
+	<atom:link href="https://chuongtrh.github.io/tags/sharing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Best practice using puppeteer to create PDF</title>
+      <link>https://chuongtrh.github.io/post/best_practice_using_puppeteer_to_create_pdf/</link>
+      <pubDate>Sun, 26 Jul 2020 08:56:22 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/post/best_practice_using_puppeteer_to_create_pdf/</guid>
+      <description>Which puppeteer we can easy to create PDF from HTML. You can find a previous post at there.</description>
+    </item>
+    
+    <item>
+      <title>Tool visualize pricing</title>
+      <link>https://chuongtrh.github.io/post/tool_visualize_pricing/</link>
+      <pubDate>Sat, 25 Jul 2020 10:44:16 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/post/tool_visualize_pricing/</guid>
+      <description>Tool visualize pricing. This is a simple tool help internal QC&amp;rsquo;s team testing business logic for CPQ (Configure Price Quote).</description>
+    </item>
+    
+    <item>
+      <title>Improve Performance Generate Pdf Using Pupppeteer</title>
+      <link>https://chuongtrh.github.io/post/improve-performance-generate-pdf-using-pupppeteer/</link>
+      <pubDate>Wed, 22 Jul 2020 22:20:53 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/post/improve-performance-generate-pdf-using-pupppeteer/</guid>
+      <description>How to generate a pdf using puppeteer? Check out at there.</description>
+    </item>
+    
+  </channel>
+</rss>

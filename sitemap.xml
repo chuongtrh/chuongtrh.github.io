@@ -78,6 +78,11 @@
   </url>
   
   <url>
+    <loc>https://chuongtrh.github.io/tags/ios/</loc>
+    <lastmod>2020-07-30T22:41:13+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chuongtrh.github.io/tags/swift/</loc>
     <lastmod>2020-07-30T22:41:13+07:00</lastmod>
   </url>
@@ -118,6 +123,11 @@
   </url>
   
   <url>
+    <loc>https://chuongtrh.github.io/tags/sharing/</loc>
+    <lastmod>2020-07-26T08:56:22+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chuongtrh.github.io/tags/cpq/</loc>
     <lastmod>2020-07-25T10:44:16+07:00</lastmod>
   </url>
@@ -139,6 +149,11 @@
   
   <url>
     <loc>https://chuongtrh.github.io/tags/opencv/</loc>
+    <lastmod>2020-07-25T10:16:37+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chuongtrh.github.io/tags/osx/</loc>
     <lastmod>2020-07-25T10:16:37+07:00</lastmod>
   </url>
   
@@ -173,12 +188,12 @@
   </url>
   
   <url>
-    <loc>https://chuongtrh.github.io/tags/request_lifecycle/</loc>
-    <lastmod>2020-07-23T22:51:52+07:00</lastmod>
+    <loc>https://chuongtrh.github.io/tags/graphdatabase/</loc>
+    <lastmod>2020-07-23T09:51:56+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chuongtrh.github.io/tags/graph_database/</loc>
+    <loc>https://chuongtrh.github.io/tags/mindmap/</loc>
     <lastmod>2020-07-23T09:51:56+07:00</lastmod>
   </url>
   
@@ -198,12 +213,12 @@
   </url>
   
   <url>
-    <loc>https://chuongtrh.github.io/tags/gcp/</loc>
+    <loc>https://chuongtrh.github.io/tags/devops/</loc>
     <lastmod>2020-07-22T23:18:42+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chuongtrh.github.io/tags/mindmap/</loc>
+    <loc>https://chuongtrh.github.io/tags/gcp/</loc>
     <lastmod>2020-07-22T23:18:42+07:00</lastmod>
   </url>
   

@@ -20,5 +20,23 @@
       <description>This is a series about Javascript and Node.js. Reference from many sources and websites.</description>
     </item>
     
+    <item>
+      <title>Tiki Explore History Extension</title>
+      <link>https://chuongtrh.github.io/post/tiki-explore-history-extension/</link>
+      <pubDate>Fri, 24 Jul 2020 14:42:04 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/post/tiki-explore-history-extension/</guid>
+      <description>Mở đầu Nhân dịp 10 năm tiki có làm event &amp;ldquo;Thập Kỷ đi cùng bạn&amp;rdquo;, để người dùng nhìn lại quá trình mua sắm trên Tiki.</description>
+    </item>
+    
+    <item>
+      <title>Request Lifecycle in Nestjs</title>
+      <link>https://chuongtrh.github.io/post/request-lifecycle-in-nestjs/</link>
+      <pubDate>Thu, 23 Jul 2020 22:51:52 +0700</pubDate>
+      
+      <guid>https://chuongtrh.github.io/post/request-lifecycle-in-nestjs/</guid>
+      <description>Nest applications handle requests and produce responses in a sequence we refer to as the request lifecycle.</description>
+    </item>
+    
   </channel>
 </rss>
