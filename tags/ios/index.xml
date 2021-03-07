@@ -17,8 +17,7 @@
       <pubDate>Thu, 30 Jul 2020 22:41:13 +0700</pubDate>
       
       <guid>https://chuongtrh.github.io/post/palette-from-image/</guid>
-      <description>Inspire from EarthView from Google.
-Using 3rd party ColorThiefSwift to generate palette.</description>
+      <description>Inspire from EarthView from Google.</description>
     </item>
     
     <item>
@@ -27,8 +26,7 @@ Using 3rd party ColorThiefSwift to generate palette.</description>
       <pubDate>Thu, 30 Jul 2020 22:35:25 +0700</pubDate>
       
       <guid>https://chuongtrh.github.io/post/pixcolor_ios/</guid>
-      <description>Generate palette color from image
-Features  Explore image from unsplash.</description>
+      <description>Generate palette color from image</description>
     </item>
     
     <item>
@@ -37,8 +35,7 @@ Features  Explore image from unsplash.</description>
       <pubDate>Thu, 30 Jul 2020 10:30:26 +0700</pubDate>
       
       <guid>https://chuongtrh.github.io/post/convert_gif_to_gif3d/</guid>
-      <description>Trick convert gif to gif3d using Swift
-Features  Simple way to convert gif to gif3d Change background Change size eraser tool  How to work  Add a layer with two white line on top every frame from orignal gif Try to eraser white line to fix with your gif Combine layers and convert to gif  Screenshots Before</description>
+      <description>Trick convert gif to gif3d using Swift</description>
     </item>
     
   </channel>

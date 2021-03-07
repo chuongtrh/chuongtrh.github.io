@@ -17,7 +17,7 @@
       <pubDate>Sat, 22 Aug 2020 11:57:01 +0700</pubDate>
       
       <guid>https://chuongtrh.github.io/post/javascript_interview/</guid>
-      <description>This is a series about Javascript and Node.js. Reference from many sources and websites.</description>
+      <description>This is a series about Javascript and Node.</description>
     </item>
     
     <item>
@@ -26,8 +26,7 @@
       <pubDate>Thu, 30 Jul 2020 22:58:21 +0700</pubDate>
       
       <guid>https://chuongtrh.github.io/post/bot-twilio-whatsapp/</guid>
-      <description>Using Twilio API for WhatsApp to build a bot.
-Features:  /wiki using duckduckgo /unsplash using unsplash /loremflickr using loremflickr /chart using quickchart  Screenshots How to use  Install the dependencies  $ npm install   Create file .</description>
+      <description>Using Twilio API for WhatsApp to build a bot.</description>
     </item>
     
     <item>
@@ -36,7 +35,7 @@ Features:  /wiki using duckduckgo /unsplash using unsplash /loremflickr using lo
       <pubDate>Sun, 26 Jul 2020 08:56:22 +0700</pubDate>
       
       <guid>https://chuongtrh.github.io/post/best_practice_using_puppeteer_to_create_pdf/</guid>
-      <description>Which puppeteer we can easy to create PDF from HTML. You can find a previous post at there.</description>
+      <description>Which puppeteer we can easy to create PDF from HTML.</description>
     </item>
     
     <item>
@@ -45,7 +44,7 @@ Features:  /wiki using duckduckgo /unsplash using unsplash /loremflickr using lo
       <pubDate>Wed, 22 Jul 2020 22:20:53 +0700</pubDate>
       
       <guid>https://chuongtrh.github.io/post/improve-performance-generate-pdf-using-pupppeteer/</guid>
-      <description>How to generate a pdf using puppeteer? Check out at there.</description>
+      <description>How to generate a pdf using puppeteer?</description>
     </item>
     
     <item>
