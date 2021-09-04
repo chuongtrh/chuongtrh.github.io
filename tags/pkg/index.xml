@@ -6,16 +6,14 @@
     <description>Recent content in pkg on Chuong Tran&#39;s blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 18 Oct 2020 10:03:10 +0700</lastBuildDate>
-    
-	<atom:link href="https://chuongtrh.github.io/tags/pkg/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <managingEditor>chuongtrh@gmail.com (ChuongTran)</managingEditor>
+    <webMaster>chuongtrh@gmail.com (ChuongTran)</webMaster>
+    <lastBuildDate>Sun, 18 Oct 2020 10:03:10 +0700</lastBuildDate><atom:link href="https://chuongtrh.github.io/tags/pkg/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Godepgraph - Visualize Go package from pkg.go.dev</title>
       <link>https://chuongtrh.github.io/post/godepgraph/</link>
       <pubDate>Sun, 18 Oct 2020 10:03:10 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/godepgraph/</guid>
       <description>Godepgraph - Visualize Go package from pkg.</description>
     </item>
@@ -24,7 +22,7 @@
       <title>Godepviz - Visualize Go imports in Graphviz DOT format</title>
       <link>https://chuongtrh.github.io/post/godepviz/</link>
       <pubDate>Sun, 18 Oct 2020 09:52:49 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/godepviz/</guid>
       <description>Visualize Go imports in Graphviz DOT format.</description>
     </item>

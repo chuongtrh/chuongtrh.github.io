@@ -6,16 +6,14 @@
     <description>Recent content in html on Chuong Tran&#39;s blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 26 Jul 2020 08:56:22 +0700</lastBuildDate>
-    
-	<atom:link href="https://chuongtrh.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <managingEditor>chuongtrh@gmail.com (ChuongTran)</managingEditor>
+    <webMaster>chuongtrh@gmail.com (ChuongTran)</webMaster>
+    <lastBuildDate>Sun, 26 Jul 2020 08:56:22 +0700</lastBuildDate><atom:link href="https://chuongtrh.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Best practice using puppeteer to create PDF</title>
       <link>https://chuongtrh.github.io/post/best_practice_using_puppeteer_to_create_pdf/</link>
       <pubDate>Sun, 26 Jul 2020 08:56:22 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/best_practice_using_puppeteer_to_create_pdf/</guid>
       <description>Which puppeteer we can easy to create PDF from HTML.</description>
     </item>
@@ -24,7 +22,7 @@
       <title>Improve Performance Generate Pdf Using Pupppeteer</title>
       <link>https://chuongtrh.github.io/post/improve-performance-generate-pdf-using-pupppeteer/</link>
       <pubDate>Wed, 22 Jul 2020 22:20:53 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/improve-performance-generate-pdf-using-pupppeteer/</guid>
       <description>How to generate a pdf using puppeteer?</description>
     </item>
@@ -33,7 +31,7 @@
       <title>Generate a simple PDF from HTML</title>
       <link>https://chuongtrh.github.io/post/html_to_pdf/</link>
       <pubDate>Wed, 22 Jul 2020 21:11:56 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/html_to_pdf/</guid>
       <description>Generate a simple PDF invoice from HTML using puppeteer &amp;amp; handlebars.</description>
     </item>

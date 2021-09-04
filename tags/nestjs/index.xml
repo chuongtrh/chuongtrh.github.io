@@ -6,16 +6,14 @@
     <description>Recent content in nestjs on Chuong Tran&#39;s blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 23 Jul 2020 22:51:52 +0700</lastBuildDate>
-    
-	<atom:link href="https://chuongtrh.github.io/tags/nestjs/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <managingEditor>chuongtrh@gmail.com (ChuongTran)</managingEditor>
+    <webMaster>chuongtrh@gmail.com (ChuongTran)</webMaster>
+    <lastBuildDate>Thu, 23 Jul 2020 22:51:52 +0700</lastBuildDate><atom:link href="https://chuongtrh.github.io/tags/nestjs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Request Lifecycle in Nestjs</title>
       <link>https://chuongtrh.github.io/post/request-lifecycle-in-nestjs/</link>
       <pubDate>Thu, 23 Jul 2020 22:51:52 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/request-lifecycle-in-nestjs/</guid>
       <description>Nest applications handle requests and produce responses in a sequence we refer to as the request lifecycle.</description>
     </item>

@@ -6,16 +6,14 @@
     <description>Recent content in twilio on Chuong Tran&#39;s blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 30 Jul 2020 22:58:21 +0700</lastBuildDate>
-    
-	<atom:link href="https://chuongtrh.github.io/tags/twilio/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <managingEditor>chuongtrh@gmail.com (ChuongTran)</managingEditor>
+    <webMaster>chuongtrh@gmail.com (ChuongTran)</webMaster>
+    <lastBuildDate>Thu, 30 Jul 2020 22:58:21 +0700</lastBuildDate><atom:link href="https://chuongtrh.github.io/tags/twilio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Build Whatsapp Bot using Twilio</title>
       <link>https://chuongtrh.github.io/post/bot-twilio-whatsapp/</link>
       <pubDate>Thu, 30 Jul 2020 22:58:21 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/bot-twilio-whatsapp/</guid>
       <description>Using Twilio API for WhatsApp to build a bot.</description>
     </item>

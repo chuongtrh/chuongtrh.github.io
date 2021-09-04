@@ -6,9 +6,7 @@
     <description>Recent content in Search on Chuong Tran&#39;s blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    
-	<atom:link href="https://chuongtrh.github.io/search/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <managingEditor>chuongtrh@gmail.com (ChuongTran)</managingEditor>
+    <webMaster>chuongtrh@gmail.com (ChuongTran)</webMaster><atom:link href="https://chuongtrh.github.io/search/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

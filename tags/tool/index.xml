@@ -6,16 +6,14 @@
     <description>Recent content in tool on Chuong Tran&#39;s blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 25 Jul 2020 10:44:16 +0700</lastBuildDate>
-    
-	<atom:link href="https://chuongtrh.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <managingEditor>chuongtrh@gmail.com (ChuongTran)</managingEditor>
+    <webMaster>chuongtrh@gmail.com (ChuongTran)</webMaster>
+    <lastBuildDate>Sat, 25 Jul 2020 10:44:16 +0700</lastBuildDate><atom:link href="https://chuongtrh.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tool visualize pricing</title>
       <link>https://chuongtrh.github.io/post/tool_visualize_pricing/</link>
       <pubDate>Sat, 25 Jul 2020 10:44:16 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/tool_visualize_pricing/</guid>
       <description>Tool visualize pricing.</description>
     </item>

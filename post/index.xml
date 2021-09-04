@@ -6,16 +6,14 @@
     <description>Recent content on Chuong Tran&#39;s blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 18 Oct 2020 10:03:10 +0700</lastBuildDate>
-    
-	<atom:link href="https://chuongtrh.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <managingEditor>chuongtrh@gmail.com (ChuongTran)</managingEditor>
+    <webMaster>chuongtrh@gmail.com (ChuongTran)</webMaster>
+    <lastBuildDate>Sun, 18 Oct 2020 10:03:10 +0700</lastBuildDate><atom:link href="https://chuongtrh.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Godepgraph - Visualize Go package from pkg.go.dev</title>
       <link>https://chuongtrh.github.io/post/godepgraph/</link>
       <pubDate>Sun, 18 Oct 2020 10:03:10 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/godepgraph/</guid>
       <description>Godepgraph - Visualize Go package from pkg.</description>
     </item>
@@ -24,7 +22,7 @@
       <title>Godepviz - Visualize Go imports in Graphviz DOT format</title>
       <link>https://chuongtrh.github.io/post/godepviz/</link>
       <pubDate>Sun, 18 Oct 2020 09:52:49 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/godepviz/</guid>
       <description>Visualize Go imports in Graphviz DOT format.</description>
     </item>
@@ -33,7 +31,7 @@
       <title>Series Javascript and Node.js</title>
       <link>https://chuongtrh.github.io/post/javascript_interview/</link>
       <pubDate>Sat, 22 Aug 2020 11:57:01 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/javascript_interview/</guid>
       <description>This is a series about Javascript and Node.</description>
     </item>
@@ -42,7 +40,7 @@
       <title>Build Whatsapp Bot using Twilio</title>
       <link>https://chuongtrh.github.io/post/bot-twilio-whatsapp/</link>
       <pubDate>Thu, 30 Jul 2020 22:58:21 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/bot-twilio-whatsapp/</guid>
       <description>Using Twilio API for WhatsApp to build a bot.</description>
     </item>
@@ -51,7 +49,7 @@
       <title>Generate Palette From Image</title>
       <link>https://chuongtrh.github.io/post/palette-from-image/</link>
       <pubDate>Thu, 30 Jul 2020 22:41:13 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/palette-from-image/</guid>
       <description>Inspire from EarthView from Google.</description>
     </item>
@@ -60,7 +58,7 @@
       <title>PixColor iOS</title>
       <link>https://chuongtrh.github.io/post/pixcolor_ios/</link>
       <pubDate>Thu, 30 Jul 2020 22:35:25 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/pixcolor_ios/</guid>
       <description>Generate palette color from image</description>
     </item>
@@ -69,7 +67,7 @@
       <title>Trick convert gif to gif3d</title>
       <link>https://chuongtrh.github.io/post/convert_gif_to_gif3d/</link>
       <pubDate>Thu, 30 Jul 2020 10:30:26 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/convert_gif_to_gif3d/</guid>
       <description>Trick convert gif to gif3d using Swift</description>
     </item>
@@ -78,7 +76,7 @@
       <title>Best practice using puppeteer to create PDF</title>
       <link>https://chuongtrh.github.io/post/best_practice_using_puppeteer_to_create_pdf/</link>
       <pubDate>Sun, 26 Jul 2020 08:56:22 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/best_practice_using_puppeteer_to_create_pdf/</guid>
       <description>Which puppeteer we can easy to create PDF from HTML.</description>
     </item>
@@ -87,7 +85,7 @@
       <title>Tool visualize pricing</title>
       <link>https://chuongtrh.github.io/post/tool_visualize_pricing/</link>
       <pubDate>Sat, 25 Jul 2020 10:44:16 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/tool_visualize_pricing/</guid>
       <description>Tool visualize pricing.</description>
     </item>
@@ -96,7 +94,7 @@
       <title>Using OpenCV to hack game Lyto Different Color on OSX</title>
       <link>https://chuongtrh.github.io/post/hack_lyto_different_color_osx/</link>
       <pubDate>Sat, 25 Jul 2020 10:16:37 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/hack_lyto_different_color_osx/</guid>
       <description>Using OpenCV to hack game Lyto different color on OSX.</description>
     </item>
@@ -105,7 +103,7 @@
       <title>Tiki Explore History Extension</title>
       <link>https://chuongtrh.github.io/post/tiki-explore-history-extension/</link>
       <pubDate>Fri, 24 Jul 2020 14:42:04 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/tiki-explore-history-extension/</guid>
       <description>Mở đầu Nhân dịp 10 năm tiki có làm event &amp;ldquo;Thập Kỷ đi cùng bạn&amp;rdquo;, để người dùng nhìn lại quá trình mua sắm trên Tiki.</description>
     </item>
@@ -114,7 +112,7 @@
       <title>Request Lifecycle in Nestjs</title>
       <link>https://chuongtrh.github.io/post/request-lifecycle-in-nestjs/</link>
       <pubDate>Thu, 23 Jul 2020 22:51:52 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/request-lifecycle-in-nestjs/</guid>
       <description>Nest applications handle requests and produce responses in a sequence we refer to as the request lifecycle.</description>
     </item>
@@ -123,7 +121,7 @@
       <title>Mindmap about Neo4j</title>
       <link>https://chuongtrh.github.io/post/mindmap-neo4j/</link>
       <pubDate>Thu, 23 Jul 2020 09:51:56 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/mindmap-neo4j/</guid>
       <description>A mindmap about Neo4j.</description>
     </item>
@@ -132,7 +130,7 @@
       <title>Mindmap about GCP</title>
       <link>https://chuongtrh.github.io/post/mindmap-gcp/</link>
       <pubDate>Wed, 22 Jul 2020 23:18:42 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/mindmap-gcp/</guid>
       <description>The mindmap about Google Cloud Platform (GCP).</description>
     </item>
@@ -141,7 +139,7 @@
       <title>Improve Performance Generate Pdf Using Pupppeteer</title>
       <link>https://chuongtrh.github.io/post/improve-performance-generate-pdf-using-pupppeteer/</link>
       <pubDate>Wed, 22 Jul 2020 22:20:53 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/improve-performance-generate-pdf-using-pupppeteer/</guid>
       <description>How to generate a pdf using puppeteer?</description>
     </item>
@@ -150,7 +148,7 @@
       <title>Generate a simple PDF from HTML</title>
       <link>https://chuongtrh.github.io/post/html_to_pdf/</link>
       <pubDate>Wed, 22 Jul 2020 21:11:56 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/html_to_pdf/</guid>
       <description>Generate a simple PDF invoice from HTML using puppeteer &amp;amp; handlebars.</description>
     </item>
@@ -159,7 +157,7 @@
       <title>My First Post</title>
       <link>https://chuongtrh.github.io/post/my-first-post/</link>
       <pubDate>Wed, 22 Jul 2020 18:03:04 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/my-first-post/</guid>
       <description>console.log(&amp;quot;Hello world&amp;quot;)  Here is the first post on my blog.</description>
     </item>

@@ -6,16 +6,14 @@
     <description>Recent content in swift on Chuong Tran&#39;s blogs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 30 Jul 2020 22:41:13 +0700</lastBuildDate>
-    
-	<atom:link href="https://chuongtrh.github.io/tags/swift/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <managingEditor>chuongtrh@gmail.com (ChuongTran)</managingEditor>
+    <webMaster>chuongtrh@gmail.com (ChuongTran)</webMaster>
+    <lastBuildDate>Thu, 30 Jul 2020 22:41:13 +0700</lastBuildDate><atom:link href="https://chuongtrh.github.io/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Generate Palette From Image</title>
       <link>https://chuongtrh.github.io/post/palette-from-image/</link>
       <pubDate>Thu, 30 Jul 2020 22:41:13 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/palette-from-image/</guid>
       <description>Inspire from EarthView from Google.</description>
     </item>
@@ -24,7 +22,7 @@
       <title>PixColor iOS</title>
       <link>https://chuongtrh.github.io/post/pixcolor_ios/</link>
       <pubDate>Thu, 30 Jul 2020 22:35:25 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/pixcolor_ios/</guid>
       <description>Generate palette color from image</description>
     </item>
@@ -33,7 +31,7 @@
       <title>Trick convert gif to gif3d</title>
       <link>https://chuongtrh.github.io/post/convert_gif_to_gif3d/</link>
       <pubDate>Thu, 30 Jul 2020 10:30:26 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/convert_gif_to_gif3d/</guid>
       <description>Trick convert gif to gif3d using Swift</description>
     </item>
@@ -42,7 +40,7 @@
       <title>Using OpenCV to hack game Lyto Different Color on OSX</title>
       <link>https://chuongtrh.github.io/post/hack_lyto_different_color_osx/</link>
       <pubDate>Sat, 25 Jul 2020 10:16:37 +0700</pubDate>
-      
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/hack_lyto_different_color_osx/</guid>
       <description>Using OpenCV to hack game Lyto different color on OSX.</description>
     </item>
