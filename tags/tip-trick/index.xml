@@ -8,7 +8,16 @@
     <language>en</language>
     <managingEditor>chuongtrh@gmail.com (ChuongTran)</managingEditor>
     <webMaster>chuongtrh@gmail.com (ChuongTran)</webMaster>
-    <lastBuildDate>Sun, 05 Sep 2021 19:55:46 +0700</lastBuildDate><atom:link href="https://chuongtrh.github.io/tags/tip-trick/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Sep 2021 10:22:57 +0700</lastBuildDate><atom:link href="https://chuongtrh.github.io/tags/tip-trick/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Measure Execution Time in Go</title>
+      <link>https://chuongtrh.github.io/post/measure-execution-time-in-go/</link>
+      <pubDate>Tue, 07 Sep 2021 10:22:57 +0700</pubDate>
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
+      <guid>https://chuongtrh.github.io/post/measure-execution-time-in-go/</guid>
+      <description>Simple timing Quick and dirty timing of a code</description>
+    </item>
+    
     <item>
       <title>How do I install Fish Shell on AWS Linux</title>
       <link>https://chuongtrh.github.io/post/install-fish-shell-on-aws-linux/</link>
