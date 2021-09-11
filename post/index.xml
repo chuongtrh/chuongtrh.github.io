@@ -177,7 +177,7 @@
       <pubDate>Wed, 22 Jul 2020 18:03:04 +0700</pubDate>
       <author>chuongtrh@gmail.com (ChuongTran)</author>
       <guid>https://chuongtrh.github.io/post/my-first-post/</guid>
-      <description>console.log(&amp;quot;Hello world&amp;quot;)  Here is the first post on my blog.</description>
+      <description>console.log(&amp;#34;Hello world&amp;#34;) Here is the first post on my blog.</description>
     </item>
     
   </channel>

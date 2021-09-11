@@ -118,13 +118,11 @@
         <p>Visualize Go imports in Graphviz DOT format.</p>
 <p>Support visualize package from <a href="https://pkg.go.dev/" target="_blank">pkg.go.dev</a></p>
 <h2 id="installation">Installation</h2>
-<pre><code class="language-bash">$ go get github.com/chuongtrh/godepviz
-</code></pre>
-<h2 id="usage">Usage</h2>
-<pre><code class="language-bash">$ godepviz github.com/gofiber/fiber/v2
-</code></pre>
-<p>The output is a graph in <a href="http://graphviz.org/" target="_blank">Graphviz</a> dot format.</p>
-<pre><code class="language-base">digraph G {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go get github.com/chuongtrh/godepviz
+</code></pre></div><h2 id="usage">Usage</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ godepviz github.com/gofiber/fiber/v2
+</code></pre></div><p>The output is a graph in <a href="http://graphviz.org/" target="_blank">Graphviz</a> dot format.</p>
+<pre><code class="language-base" data-lang="base">digraph G {
          rankdir=&quot;LR&quot;;
     pad=.25;
     ratio=fill;
@@ -140,16 +138,13 @@
         &quot;github.com/valyala/fasthttp/reuseport&quot; -&gt; &quot;github.com/valyala/tcplisten&quot;;
         &quot;github.com/gofiber/fiber/v2&quot;  [style=filled];
 }
-</code></pre>
-<p>You can view a output graph with tool <a href="https://dreampuf.github.io/GraphvizOnline" target="_blank">https://dreampuf.github.io/GraphvizOnline</a>
+</code></pre><p>You can view a output graph with tool <a href="https://dreampuf.github.io/GraphvizOnline" target="_blank">https://dreampuf.github.io/GraphvizOnline</a>
 or <a href="http://viz-js.com" target="_blank">http://viz-js.com</a></p>
 <p>If you have the <strong>graphviz</strong> tools installed you can render it by piping the output to dot:</p>
-<pre><code class="language-bash">$ godepviz github.com/gofiber/fiber/v2 | dot -Tpng -o godep.png
-</code></pre>
-<p>Export SVG file with a large graph have many nodes of dependencies</p>
-<pre><code class="language-bash">$ godepviz github.com/gofiber/fiber/v2 | dot -Gdpi=0 -T svg -o godep.svg
-</code></pre>
-<h2 id="example">Example</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ godepviz github.com/gofiber/fiber/v2 | dot -Tpng -o godep.png
+</code></pre></div><p>Export SVG file with a large graph have many nodes of dependencies</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ godepviz github.com/gofiber/fiber/v2 | dot -Gdpi<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span> -T svg -o godep.svg
+</code></pre></div><h2 id="example">Example</h2>
 <ul>
 <li>Package <code>net/http</code></li>
 </ul>
@@ -567,11 +562,9 @@ or <a href="http://viz-js.com" target="_blank">http://viz-js.com</a></p>
         <div class="col-12 footer">
             
             <span>&copy; 2019-2021
-                <a href="https://chuongtrh.github.io">Chuong Tran</a>
-                 | <a href="https://github.com/chuongtrh">Source code</a> 
                 | Powered by <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"
-                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
-                                                    target="_blank">Hugo</a> 
+                   target="_blank">Fuji-v2</a> 
+                    
             </span>
         </div>
     </div>
