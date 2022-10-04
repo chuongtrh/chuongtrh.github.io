@@ -4,21 +4,31 @@
   
   <url>
     <loc>https://chuongtrh.github.io/</loc>
-    <lastmod>2022-07-22T09:54:37+07:00</lastmod>
+    <lastmod>2022-10-04T14:58:34+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://chuongtrh.github.io/post/</loc>
-    <lastmod>2022-07-22T09:54:37+07:00</lastmod>
+    <lastmod>2022-10-04T14:58:34+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chuongtrh.github.io/post/deep-copy-js/</loc>
-    <lastmod>2022-07-22T09:54:37+07:00</lastmod>
+    <loc>https://chuongtrh.github.io/post/path-alias/</loc>
+    <lastmod>2022-10-04T14:58:34+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://chuongtrh.github.io/tags/javascript/</loc>
+    <lastmod>2022-10-04T14:58:34+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chuongtrh.github.io/tags/path-alias/</loc>
+    <lastmod>2022-10-04T14:58:34+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chuongtrh.github.io/post/deep-copy-js/</loc>
     <lastmod>2022-07-22T09:54:37+07:00</lastmod>
   </url>
   

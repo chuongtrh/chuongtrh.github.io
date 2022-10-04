@@ -15,23 +15,23 @@
 <link rel="ChuongTran's blog" href="/favicons/favicon.ico" />
 
 
-<title>Using OpenCV to hack game Lyto Different Color on OSX - Chuong Tran&#39;s blogs</title>
+<title> - Chuong Tran&#39;s blogs</title>
 
 
-<meta name="author" content="Chuong Tran" />
+<meta name="author" content="ChuongTran Authors" />
 
 
-<meta name="description" content="Using OpenCV to hack game Lyto Different Color on OSX" />
+<meta name="description" content="Welcome to my personal blog!" />
 
 
-<meta name="keywords" content="swift, opencv, osx" />
+<meta name="keywords" content="index" />
 
+<link rel="alternate" type="application/rss+xml" href="https://chuongtrh.github.io/post/index.xml" title="Chuong Tran's blogs" />
 
-<meta property="og:title" content="Using OpenCV to hack game Lyto Different Color on OSX" />
-<meta name="twitter:title" content="Using OpenCV to hack game Lyto Different Color on OSX" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://chuongtrh.github.io/post/hack_lyto_different_color_osx/" /><meta property="og:description" content="Using OpenCV to hack game Lyto Different Color on OSX" />
-<meta name="twitter:description" content="Using OpenCV to hack game Lyto Different Color on OSX" /><meta name="twitter:card" content="summary" /><meta property="article:published_time" content="2020-07-25T10:16:37+07:00" /><meta property="article:modified_time" content="2020-07-25T10:16:37+07:00" />
+<meta property="og:title" content="" />
+<meta name="twitter:title" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://chuongtrh.github.io/post/" /><meta name="twitter:card" content="summary" /><meta property="og:updated_time" content="2022-10-04T14:58:34+07:00" />
 
 
 <style>
@@ -100,125 +100,36 @@
             
             <div class="col-12 col-md-9 float-left content">
                 
-<article>
-    
+
+
+
+<div class="post">
     <h2 class="post-item post-title">
-        <a href="https://chuongtrh.github.io/post/hack_lyto_different_color_osx/">Using OpenCV to hack game Lyto Different Color on OSX</a>
+        <a href="https://chuongtrh.github.io/post/my-first-post/">My First Post</a>
     </h2>
     <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-07-25</span>
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-07-22</span>
 
 
 
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/swift">swift</a>&nbsp;<a href="/tags/opencv">opencv</a>&nbsp;<a href="/tags/osx">osx</a>&nbsp;</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;No tag</span>
 
     </div>
-    
-    <div class="post-content markdown-body">
-        <p>Using OpenCV to hack game Lyto different color on OSX.</p>
-<p>Demo with 193 level</p>
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/WI162qIHEGA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+    <div class="post-item post-summary markdown-body">
+        console.log(&#34;Hello world&#34;) Here is the first post on my blog.
+    </div>
 </div>
-
-<h2 id="build-opencv-on-osx">Build OpenCV on OSX</h2>
-<h3 id="required">Required</h3>
-<ul>
-<li>CMake 2.8.8 or higher</li>
-<li>Xcode 10 or higher</li>
-<li>Python 2.7 or higher</li>
-<li></li>
-</ul>
-<h3 id="building-opencv-from-source">Building OpenCV from Source</h3>
-<pre><code>git clone https://github.com/opencv/opencv.git
-python opencv/platforms/ios/build_framework.py ios
-</code></pre>
-<p>Copy opencv2.framework into hackcolor directory.</p>
-<h2 id="methodology">Methodology</h2>
-<ul>
-<li>Take a screenshot of the rect of screen.</li>
-<li>Detect the circles in the screenshot using Hough in OpenCV.</li>
-<li>Process circles:
-<ul>
-<li>Check radius</li>
-<li>Find circle with different color</li>
-</ul>
-</li>
-<li>Simulate mouse click on screen</li>
-<li>Similate the result on screen.</li>
-</ul>
-<p>Using function HoughCircles in openCV to detect array circles from image</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#ff79c6">+</span> (NSDictionary <span style="color:#ff79c6">*</span>)hack:(NSImage <span style="color:#ff79c6">*</span>)image {
-    cv::Mat src;
-    NSImageToMat(image, src);
-
-    cv::Mat gray;
-    cv::cvtColor(src, gray, cv::COLOR_BGR2GRAY);
-    cv::medianBlur(gray, gray, <span style="color:#bd93f9">5</span>);
-    std::vector&lt;cv::Vec3f&gt; circles;
-    HoughCircles(gray, circles, cv::HOUGH_GRADIENT, <span style="color:#bd93f9">1</span>,
-                 src.rows<span style="color:#ff79c6">/</span><span style="color:#bd93f9">16</span>,
-                 <span style="color:#bd93f9">100</span>, <span style="color:#bd93f9">70</span>, <span style="color:#bd93f9">10</span>, <span style="color:#bd93f9">300</span>
-                 );
-
-    cv::Point tempPoint;
-    NSMutableArray <span style="color:#ff79c6">*</span>arrPoints = [[NSMutableArray alloc] <span style="color:#8be9fd;font-style:italic">init</span>];
-
-    <span style="color:#ff79c6">if</span>(circles.size() <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">3</span>) {
-
-        std::vector&lt;cv::Vec3b&gt; vColors;
-
-        int tempRadius = circles[<span style="color:#bd93f9">0</span>][<span style="color:#bd93f9">2</span>];
-        <span style="color:#ff79c6">for</span>( size_t i = <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> circles.size(); i<span style="color:#ff79c6">++</span> )
-        {
-            cv::Vec3i c = circles[i];
-            int radius = c[<span style="color:#bd93f9">2</span>];
-            <span style="color:#6272a4">//NSLog(@&#34;%ld %d %d&#34;, i, tempRadius, radius);</span>
-
-            <span style="color:#ff79c6">if</span>(std::abs(tempRadius <span style="color:#ff79c6">-</span> radius) <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">5</span>){
-                vColors.push_back(GetColorFromMat(src, c));
-                cv::Point center = cv::Point(c[<span style="color:#bd93f9">0</span>], c[<span style="color:#bd93f9">1</span>]);
-                cv::circle( src, center, radius<span style="color:#ff79c6">-</span><span style="color:#bd93f9">2</span>, cv::Scalar(<span style="color:#bd93f9">255</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">255</span>), <span style="color:#bd93f9">2</span>, cv::LINE_AA);
-            }
-        }
-        <span style="color:#ff79c6">for</span>( size_t i = <span style="color:#bd93f9">0</span>; i <span style="color:#ff79c6">&lt;</span> vColors.size(); i<span style="color:#ff79c6">++</span> ) {
-            cv::Vec3b color1 = vColors[i];
-            bool flag = <span style="color:#ff79c6">true</span>;
-            <span style="color:#ff79c6">for</span>( size_t j = <span style="color:#bd93f9">0</span>; j <span style="color:#ff79c6">&lt;</span> vColors.size(); j<span style="color:#ff79c6">++</span> ) {
-                cv::Vec3b color2 = vColors[j];
-                <span style="color:#ff79c6">if</span>(i!=j <span style="color:#ff79c6">&amp;&amp;</span> color1[<span style="color:#bd93f9">0</span>]==color2[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">&amp;&amp;</span> color1[<span style="color:#bd93f9">1</span>]==color2[<span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">&amp;&amp;</span> color1[<span style="color:#bd93f9">2</span>]==color2[<span style="color:#bd93f9">2</span>]) {
-                    flag = <span style="color:#ff79c6">false</span>;
-                }
-            }
-            <span style="color:#ff79c6">if</span>(flag){
-                cv::Vec3i c = circles[i];
-                tempPoint = cv::Point(c[<span style="color:#bd93f9">0</span>], c[<span style="color:#bd93f9">1</span>]);
-                cv::circle( src, tempPoint, <span style="color:#bd93f9">10</span>, cv::Scalar(<span style="color:#bd93f9">255</span>,<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">255</span>), <span style="color:#bd93f9">4</span>, cv::LINE_8);
-                NSLog(@<span style="color:#f1fa8c">&#34;%ld R: %d G:%d B:%d&#34;</span>, i, color1[<span style="color:#bd93f9">0</span>], color1[<span style="color:#bd93f9">1</span>], color1[<span style="color:#bd93f9">2</span>]);
-                [arrPoints addObject: @{ @<span style="color:#f1fa8c">&#34;x&#34;</span>: [NSNumber numberWithInt:tempPoint.x],
-                                         @<span style="color:#f1fa8c">&#34;y&#34;</span>: [NSNumber numberWithInt:tempPoint.y]}];
-            }
-        }
-        <span style="color:#ff79c6">if</span>(arrPoints.count&gt;<span style="color:#bd93f9">1</span>){
-            NSLog(@<span style="color:#f1fa8c">&#34;xx: %ld&#34;</span>, arrPoints.count);
-        }
-    }
-
-    <span style="color:#ff79c6">return</span> @{
-        @<span style="color:#f1fa8c">&#34;image&#34;</span>: MatToNSImage(src),
-        @<span style="color:#f1fa8c">&#34;points&#34;</span>: arrPoints,
-    };
-}
-</code></pre></div><p>Source code: <a href="https://github.com/chuongtrh/hack_lyto_different_color_osx">https://github.com/chuongtrh/hack_lyto_different_color_osx</a></p>
-<h3 id="thanks-for-reading-and-happy-sharing">Thanks for reading and happy sharing</h3>
-
-    </div>
-</article>
-
-
-
-
+<div class="pagination"><div class="pag-first">
+    <a href="/post/"><i class="iconfont icon-caret-back-circle-sharp"></i></a>
+  </div><div class="pag-previous">
+    <a href="/post/page/2/"><i class="iconfont icon-chevron-back-circle-sharp"></i></a>
+  </div><div class="pag-item">
+    <a href="/post/">1</a>
+  </div><div class="pag-item">
+    <a href="/post/page/2/">2</a>
+  </div><div class="pag-item pag-current">
+    <a href="/post/page/3/">3</a>
+  </div></div>
             </div>
             <aside class="col-12 col-md-3 float-left sidebar">
     
@@ -406,6 +317,8 @@ python opencv/platforms/ios/build_framework.py ios
             
         </div>
     </div>
+    
+    
     
 </aside>
 

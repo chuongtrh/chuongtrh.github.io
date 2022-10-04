@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>path alias on Chuong Tran&#39;s blogs</title>
+    <link>https://chuongtrh.github.io/tags/path-alias/</link>
+    <description>Recent content in path alias on Chuong Tran&#39;s blogs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>chuongtrh@gmail.com (ChuongTran)</managingEditor>
+    <webMaster>chuongtrh@gmail.com (ChuongTran)</webMaster>
+    <lastBuildDate>Tue, 04 Oct 2022 14:58:34 +0700</lastBuildDate><atom:link href="https://chuongtrh.github.io/tags/path-alias/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to setup path alias Javascript in VisualCode</title>
+      <link>https://chuongtrh.github.io/post/path-alias/</link>
+      <pubDate>Tue, 04 Oct 2022 14:58:34 +0700</pubDate>
+      <author>chuongtrh@gmail.com (ChuongTran)</author>
+      <guid>https://chuongtrh.github.io/post/path-alias/</guid>
+      <description>How to setup path alias Javascript in VSCode?</description>
+    </item>
+    
+  </channel>
+</rss>
